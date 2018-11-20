@@ -1,0 +1,18 @@
+Association > Label:SourceRole {
+	visible:false;
+}
+
+Association > Label:TargetRole {
+	visible:false;}		
+
+Label[type=StereotypeLabel][stereotype="OpenModel_Profile::StrictComposite"]{
+    visible:true;
+}
+
+Label[type=StereotypeLabel][stereotype="OpenModel_Profile::ExtendedComposite"]{
+    visible:true;
+}
+
+Label[type=StereotypeLabel][stereotype="OpenModel_Profile::Specify"]{
+    visible:true;
+}
