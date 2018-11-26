@@ -15,21 +15,21 @@ import (
 // TapiOamMegMep tapi oam meg mep
 // swagger:model tapi.oam.meg.Mep
 type TapiOamMegMep struct {
-	TapiEthMepAugmentation1
+	TapiEthMepAugmentation2
 
 	TapiOamMep
 
-	TapiOduMepAugmentation2
+	TapiOduMepAugmentation1
 }
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *TapiOamMegMep) UnmarshalJSON(raw []byte) error {
 	// AO0
-	var aO0 TapiEthMepAugmentation1
+	var aO0 TapiEthMepAugmentation2
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
 		return err
 	}
-	m.TapiEthMepAugmentation1 = aO0
+	m.TapiEthMepAugmentation2 = aO0
 
 	// AO1
 	var aO1 TapiOamMep
@@ -39,11 +39,11 @@ func (m *TapiOamMegMep) UnmarshalJSON(raw []byte) error {
 	m.TapiOamMep = aO1
 
 	// AO2
-	var aO2 TapiOduMepAugmentation2
+	var aO2 TapiOduMepAugmentation1
 	if err := swag.ReadJSON(raw, &aO2); err != nil {
 		return err
 	}
-	m.TapiOduMepAugmentation2 = aO2
+	m.TapiOduMepAugmentation1 = aO2
 
 	return nil
 }
@@ -52,7 +52,7 @@ func (m *TapiOamMegMep) UnmarshalJSON(raw []byte) error {
 func (m TapiOamMegMep) MarshalJSON() ([]byte, error) {
 	_parts := make([][]byte, 0, 3)
 
-	aO0, err := swag.WriteJSON(m.TapiEthMepAugmentation1)
+	aO0, err := swag.WriteJSON(m.TapiEthMepAugmentation2)
 	if err != nil {
 		return nil, err
 	}
@@ -64,7 +64,7 @@ func (m TapiOamMegMep) MarshalJSON() ([]byte, error) {
 	}
 	_parts = append(_parts, aO1)
 
-	aO2, err := swag.WriteJSON(m.TapiOduMepAugmentation2)
+	aO2, err := swag.WriteJSON(m.TapiOduMepAugmentation1)
 	if err != nil {
 		return nil, err
 	}
@@ -77,16 +77,16 @@ func (m TapiOamMegMep) MarshalJSON() ([]byte, error) {
 func (m *TapiOamMegMep) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	// validation for a type composition with TapiEthMepAugmentation1
-	if err := m.TapiEthMepAugmentation1.Validate(formats); err != nil {
+	// validation for a type composition with TapiEthMepAugmentation2
+	if err := m.TapiEthMepAugmentation2.Validate(formats); err != nil {
 		res = append(res, err)
 	}
 	// validation for a type composition with TapiOamMep
 	if err := m.TapiOamMep.Validate(formats); err != nil {
 		res = append(res, err)
 	}
-	// validation for a type composition with TapiOduMepAugmentation2
-	if err := m.TapiOduMepAugmentation2.Validate(formats); err != nil {
+	// validation for a type composition with TapiOduMepAugmentation1
+	if err := m.TapiOduMepAugmentation1.Validate(formats); err != nil {
 		res = append(res, err)
 	}
 

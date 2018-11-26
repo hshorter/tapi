@@ -17,14 +17,14 @@ import (
 type TapiEthPmCurrentDataAugmentation9 struct {
 
 	// none
-	EthLoopbackResultData *TapiEthEthLoopbackResultData `json:"eth-loopback-result-data,omitempty"`
+	EthOnDemandLmPerformanceData *TapiEthEthOnDemandLmPerformanceData `json:"eth-on-demand-lm-performance-data,omitempty"`
 }
 
 // Validate validates this tapi eth pm current data augmentation9
 func (m *TapiEthPmCurrentDataAugmentation9) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateEthLoopbackResultData(formats); err != nil {
+	if err := m.validateEthOnDemandLmPerformanceData(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -34,16 +34,16 @@ func (m *TapiEthPmCurrentDataAugmentation9) Validate(formats strfmt.Registry) er
 	return nil
 }
 
-func (m *TapiEthPmCurrentDataAugmentation9) validateEthLoopbackResultData(formats strfmt.Registry) error {
+func (m *TapiEthPmCurrentDataAugmentation9) validateEthOnDemandLmPerformanceData(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.EthLoopbackResultData) { // not required
+	if swag.IsZero(m.EthOnDemandLmPerformanceData) { // not required
 		return nil
 	}
 
-	if m.EthLoopbackResultData != nil {
-		if err := m.EthLoopbackResultData.Validate(formats); err != nil {
+	if m.EthOnDemandLmPerformanceData != nil {
+		if err := m.EthOnDemandLmPerformanceData.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("eth-loopback-result-data")
+				return ve.ValidateName("eth-on-demand-lm-performance-data")
 			}
 			return err
 		}

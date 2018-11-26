@@ -27,8 +27,8 @@ func main() {
 	defer server.Shutdown()
 
 	parser := flags.NewParser(server, flags.Default)
-	parser.ShortDescription = "tapi-odu,tapi-oam,tapi-connectivity,tapi-photonic-media,tapi-dsr,tapi-path-computation,tapi-eth,tapi-common,tapi-topology,tapi-virtual-network,tapi-notification API"
-	parser.LongDescription = "tapi-odu,tapi-oam,tapi-connectivity,tapi-photonic-media,tapi-dsr,tapi-path-computation,tapi-eth,tapi-common,tapi-topology,tapi-virtual-network,tapi-notification API generated from yang definitions"
+	parser.ShortDescription = "tapi-odu,tapi-oam,tapi-connectivity,tapi-photonic-media,tapi-network-element,tapi-dsr,tapi-path-computation,tapi-eth,tapi-common,tapi-topology,tapi-virtual-network,tapi-notification API"
+	parser.LongDescription = "tapi-odu,tapi-oam,tapi-connectivity,tapi-photonic-media,tapi-network-element,tapi-dsr,tapi-path-computation,tapi-eth,tapi-common,tapi-topology,tapi-virtual-network,tapi-notification API generated from yang definitions"
 
 	server.ConfigureFlags()
 	for _, optsGroup := range api.CommandLineOptionsGroups {

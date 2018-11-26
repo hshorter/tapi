@@ -21,6 +21,7 @@ import (
 
 	"github.com/damianoneill/tapi/restapi/operations/tapi_common"
 	"github.com/damianoneill/tapi/restapi/operations/tapi_connectivity"
+	"github.com/damianoneill/tapi/restapi/operations/tapi_network_element"
 	"github.com/damianoneill/tapi/restapi/operations/tapi_notification"
 	"github.com/damianoneill/tapi/restapi/operations/tapi_oam"
 	"github.com/damianoneill/tapi/restapi/operations/tapi_path_computation"
@@ -57,6 +58,9 @@ func NewTapiAPI(spec *loads.Document) *TapiAPI {
 		TapiConnectivityPostOperationsCreateConnectivityServiceHandler: tapi_connectivity.PostOperationsCreateConnectivityServiceHandlerFunc(func(params tapi_connectivity.PostOperationsCreateConnectivityServiceParams) middleware.Responder {
 			return middleware.NotImplemented("operation TapiConnectivityPostOperationsCreateConnectivityService has not yet been implemented")
 		}),
+		TapiNetworkElementPostOperationsCreateNetworkElementHandler: tapi_network_element.PostOperationsCreateNetworkElementHandlerFunc(func(params tapi_network_element.PostOperationsCreateNetworkElementParams) middleware.Responder {
+			return middleware.NotImplemented("operation TapiNetworkElementPostOperationsCreateNetworkElement has not yet been implemented")
+		}),
 		TapiNotificationPostOperationsCreateNotificationSubscriptionServiceHandler: tapi_notification.PostOperationsCreateNotificationSubscriptionServiceHandlerFunc(func(params tapi_notification.PostOperationsCreateNotificationSubscriptionServiceParams) middleware.Responder {
 			return middleware.NotImplemented("operation TapiNotificationPostOperationsCreateNotificationSubscriptionService has not yet been implemented")
 		}),
@@ -74,6 +78,9 @@ func NewTapiAPI(spec *loads.Document) *TapiAPI {
 		}),
 		TapiConnectivityPostOperationsDeleteConnectivityServiceHandler: tapi_connectivity.PostOperationsDeleteConnectivityServiceHandlerFunc(func(params tapi_connectivity.PostOperationsDeleteConnectivityServiceParams) middleware.Responder {
 			return middleware.NotImplemented("operation TapiConnectivityPostOperationsDeleteConnectivityService has not yet been implemented")
+		}),
+		TapiNetworkElementPostOperationsDeleteNetworkElementHandler: tapi_network_element.PostOperationsDeleteNetworkElementHandlerFunc(func(params tapi_network_element.PostOperationsDeleteNetworkElementParams) middleware.Responder {
+			return middleware.NotImplemented("operation TapiNetworkElementPostOperationsDeleteNetworkElement has not yet been implemented")
 		}),
 		TapiNotificationPostOperationsDeleteNotificationSubscriptionServiceHandler: tapi_notification.PostOperationsDeleteNotificationSubscriptionServiceHandlerFunc(func(params tapi_notification.PostOperationsDeleteNotificationSubscriptionServiceParams) middleware.Responder {
 			return middleware.NotImplemented("operation TapiNotificationPostOperationsDeleteNotificationSubscriptionService has not yet been implemented")
@@ -107,6 +114,12 @@ func NewTapiAPI(spec *loads.Document) *TapiAPI {
 		}),
 		TapiOamPostOperationsGetMegHandler: tapi_oam.PostOperationsGetMegHandlerFunc(func(params tapi_oam.PostOperationsGetMegParams) middleware.Responder {
 			return middleware.NotImplemented("operation TapiOamPostOperationsGetMeg has not yet been implemented")
+		}),
+		TapiNetworkElementPostOperationsGetNetworkElementDetailsHandler: tapi_network_element.PostOperationsGetNetworkElementDetailsHandlerFunc(func(params tapi_network_element.PostOperationsGetNetworkElementDetailsParams) middleware.Responder {
+			return middleware.NotImplemented("operation TapiNetworkElementPostOperationsGetNetworkElementDetails has not yet been implemented")
+		}),
+		TapiNetworkElementPostOperationsGetNetworkElementListHandler: tapi_network_element.PostOperationsGetNetworkElementListHandlerFunc(func(params tapi_network_element.PostOperationsGetNetworkElementListParams) middleware.Responder {
+			return middleware.NotImplemented("operation TapiNetworkElementPostOperationsGetNetworkElementList has not yet been implemented")
 		}),
 		TapiTopologyPostOperationsGetNodeDetailsHandler: tapi_topology.PostOperationsGetNodeDetailsHandlerFunc(func(params tapi_topology.PostOperationsGetNodeDetailsParams) middleware.Responder {
 			return middleware.NotImplemented("operation TapiTopologyPostOperationsGetNodeDetails has not yet been implemented")
@@ -180,7 +193,7 @@ func NewTapiAPI(spec *loads.Document) *TapiAPI {
 	}
 }
 
-/*TapiAPI tapi-odu,tapi-oam,tapi-connectivity,tapi-photonic-media,tapi-dsr,tapi-path-computation,tapi-eth,tapi-common,tapi-topology,tapi-virtual-network,tapi-notification API generated from yang definitions */
+/*TapiAPI tapi-odu,tapi-oam,tapi-connectivity,tapi-photonic-media,tapi-network-element,tapi-dsr,tapi-path-computation,tapi-eth,tapi-common,tapi-topology,tapi-virtual-network,tapi-notification API generated from yang definitions */
 type TapiAPI struct {
 	spec            *loads.Document
 	context         *middleware.Context
@@ -216,6 +229,8 @@ type TapiAPI struct {
 	TapiPathComputationPostOperationsComputeP2PPathHandler tapi_path_computation.PostOperationsComputeP2PPathHandler
 	// TapiConnectivityPostOperationsCreateConnectivityServiceHandler sets the operation handler for the post operations create connectivity service operation
 	TapiConnectivityPostOperationsCreateConnectivityServiceHandler tapi_connectivity.PostOperationsCreateConnectivityServiceHandler
+	// TapiNetworkElementPostOperationsCreateNetworkElementHandler sets the operation handler for the post operations create network element operation
+	TapiNetworkElementPostOperationsCreateNetworkElementHandler tapi_network_element.PostOperationsCreateNetworkElementHandler
 	// TapiNotificationPostOperationsCreateNotificationSubscriptionServiceHandler sets the operation handler for the post operations create notification subscription service operation
 	TapiNotificationPostOperationsCreateNotificationSubscriptionServiceHandler tapi_notification.PostOperationsCreateNotificationSubscriptionServiceHandler
 	// TapiOamPostOperationsCreateOamJobHandler sets the operation handler for the post operations create oam job operation
@@ -228,6 +243,8 @@ type TapiAPI struct {
 	TapiVirtualNetworkPostOperationsCreateVirtualNetworkServiceHandler tapi_virtual_network.PostOperationsCreateVirtualNetworkServiceHandler
 	// TapiConnectivityPostOperationsDeleteConnectivityServiceHandler sets the operation handler for the post operations delete connectivity service operation
 	TapiConnectivityPostOperationsDeleteConnectivityServiceHandler tapi_connectivity.PostOperationsDeleteConnectivityServiceHandler
+	// TapiNetworkElementPostOperationsDeleteNetworkElementHandler sets the operation handler for the post operations delete network element operation
+	TapiNetworkElementPostOperationsDeleteNetworkElementHandler tapi_network_element.PostOperationsDeleteNetworkElementHandler
 	// TapiNotificationPostOperationsDeleteNotificationSubscriptionServiceHandler sets the operation handler for the post operations delete notification subscription service operation
 	TapiNotificationPostOperationsDeleteNotificationSubscriptionServiceHandler tapi_notification.PostOperationsDeleteNotificationSubscriptionServiceHandler
 	// TapiOamPostOperationsDeleteOamJobHandler sets the operation handler for the post operations delete oam job operation
@@ -250,6 +267,10 @@ type TapiAPI struct {
 	TapiTopologyPostOperationsGetLinkDetailsHandler tapi_topology.PostOperationsGetLinkDetailsHandler
 	// TapiOamPostOperationsGetMegHandler sets the operation handler for the post operations get meg operation
 	TapiOamPostOperationsGetMegHandler tapi_oam.PostOperationsGetMegHandler
+	// TapiNetworkElementPostOperationsGetNetworkElementDetailsHandler sets the operation handler for the post operations get network element details operation
+	TapiNetworkElementPostOperationsGetNetworkElementDetailsHandler tapi_network_element.PostOperationsGetNetworkElementDetailsHandler
+	// TapiNetworkElementPostOperationsGetNetworkElementListHandler sets the operation handler for the post operations get network element list operation
+	TapiNetworkElementPostOperationsGetNetworkElementListHandler tapi_network_element.PostOperationsGetNetworkElementListHandler
 	// TapiTopologyPostOperationsGetNodeDetailsHandler sets the operation handler for the post operations get node details operation
 	TapiTopologyPostOperationsGetNodeDetailsHandler tapi_topology.PostOperationsGetNodeDetailsHandler
 	// TapiTopologyPostOperationsGetNodeEdgePointDetailsHandler sets the operation handler for the post operations get node edge point details operation
@@ -375,6 +396,10 @@ func (o *TapiAPI) Validate() error {
 		unregistered = append(unregistered, "tapi_connectivity.PostOperationsCreateConnectivityServiceHandler")
 	}
 
+	if o.TapiNetworkElementPostOperationsCreateNetworkElementHandler == nil {
+		unregistered = append(unregistered, "tapi_network_element.PostOperationsCreateNetworkElementHandler")
+	}
+
 	if o.TapiNotificationPostOperationsCreateNotificationSubscriptionServiceHandler == nil {
 		unregistered = append(unregistered, "tapi_notification.PostOperationsCreateNotificationSubscriptionServiceHandler")
 	}
@@ -397,6 +422,10 @@ func (o *TapiAPI) Validate() error {
 
 	if o.TapiConnectivityPostOperationsDeleteConnectivityServiceHandler == nil {
 		unregistered = append(unregistered, "tapi_connectivity.PostOperationsDeleteConnectivityServiceHandler")
+	}
+
+	if o.TapiNetworkElementPostOperationsDeleteNetworkElementHandler == nil {
+		unregistered = append(unregistered, "tapi_network_element.PostOperationsDeleteNetworkElementHandler")
 	}
 
 	if o.TapiNotificationPostOperationsDeleteNotificationSubscriptionServiceHandler == nil {
@@ -441,6 +470,14 @@ func (o *TapiAPI) Validate() error {
 
 	if o.TapiOamPostOperationsGetMegHandler == nil {
 		unregistered = append(unregistered, "tapi_oam.PostOperationsGetMegHandler")
+	}
+
+	if o.TapiNetworkElementPostOperationsGetNetworkElementDetailsHandler == nil {
+		unregistered = append(unregistered, "tapi_network_element.PostOperationsGetNetworkElementDetailsHandler")
+	}
+
+	if o.TapiNetworkElementPostOperationsGetNetworkElementListHandler == nil {
+		unregistered = append(unregistered, "tapi_network_element.PostOperationsGetNetworkElementListHandler")
 	}
 
 	if o.TapiTopologyPostOperationsGetNodeDetailsHandler == nil {
@@ -656,6 +693,11 @@ func (o *TapiAPI) initHandlerCache() {
 	if o.handlers["POST"] == nil {
 		o.handlers["POST"] = make(map[string]http.Handler)
 	}
+	o.handlers["POST"]["/operations/create-network-element"] = tapi_network_element.NewPostOperationsCreateNetworkElement(o.context, o.TapiNetworkElementPostOperationsCreateNetworkElementHandler)
+
+	if o.handlers["POST"] == nil {
+		o.handlers["POST"] = make(map[string]http.Handler)
+	}
 	o.handlers["POST"]["/operations/create-notification-subscription-service"] = tapi_notification.NewPostOperationsCreateNotificationSubscriptionService(o.context, o.TapiNotificationPostOperationsCreateNotificationSubscriptionServiceHandler)
 
 	if o.handlers["POST"] == nil {
@@ -682,6 +724,11 @@ func (o *TapiAPI) initHandlerCache() {
 		o.handlers["POST"] = make(map[string]http.Handler)
 	}
 	o.handlers["POST"]["/operations/delete-connectivity-service"] = tapi_connectivity.NewPostOperationsDeleteConnectivityService(o.context, o.TapiConnectivityPostOperationsDeleteConnectivityServiceHandler)
+
+	if o.handlers["POST"] == nil {
+		o.handlers["POST"] = make(map[string]http.Handler)
+	}
+	o.handlers["POST"]["/operations/delete-network-element"] = tapi_network_element.NewPostOperationsDeleteNetworkElement(o.context, o.TapiNetworkElementPostOperationsDeleteNetworkElementHandler)
 
 	if o.handlers["POST"] == nil {
 		o.handlers["POST"] = make(map[string]http.Handler)
@@ -737,6 +784,16 @@ func (o *TapiAPI) initHandlerCache() {
 		o.handlers["POST"] = make(map[string]http.Handler)
 	}
 	o.handlers["POST"]["/operations/get-meg"] = tapi_oam.NewPostOperationsGetMeg(o.context, o.TapiOamPostOperationsGetMegHandler)
+
+	if o.handlers["POST"] == nil {
+		o.handlers["POST"] = make(map[string]http.Handler)
+	}
+	o.handlers["POST"]["/operations/get-network-element-details"] = tapi_network_element.NewPostOperationsGetNetworkElementDetails(o.context, o.TapiNetworkElementPostOperationsGetNetworkElementDetailsHandler)
+
+	if o.handlers["POST"] == nil {
+		o.handlers["POST"] = make(map[string]http.Handler)
+	}
+	o.handlers["POST"]["/operations/get-network-element-list"] = tapi_network_element.NewPostOperationsGetNetworkElementList(o.context, o.TapiNetworkElementPostOperationsGetNetworkElementListHandler)
 
 	if o.handlers["POST"] == nil {
 		o.handlers["POST"] = make(map[string]http.Handler)

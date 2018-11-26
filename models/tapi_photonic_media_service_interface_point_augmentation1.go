@@ -17,14 +17,14 @@ import (
 type TapiPhotonicMediaServiceInterfacePointAugmentation1 struct {
 
 	// none
-	OtsiServiceInterfacePointSpec *TapiPhotonicMediaOtsiServiceInterfacePointSpec `json:"otsi-service-interface-point-spec,omitempty"`
+	MediaChannelServiceInterfacePointSpec *TapiPhotonicMediaMediaChannelServiceInterfacePointSpec `json:"media-channel-service-interface-point-spec,omitempty"`
 }
 
 // Validate validates this tapi photonic media service interface point augmentation1
 func (m *TapiPhotonicMediaServiceInterfacePointAugmentation1) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateOtsiServiceInterfacePointSpec(formats); err != nil {
+	if err := m.validateMediaChannelServiceInterfacePointSpec(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -34,16 +34,16 @@ func (m *TapiPhotonicMediaServiceInterfacePointAugmentation1) Validate(formats s
 	return nil
 }
 
-func (m *TapiPhotonicMediaServiceInterfacePointAugmentation1) validateOtsiServiceInterfacePointSpec(formats strfmt.Registry) error {
+func (m *TapiPhotonicMediaServiceInterfacePointAugmentation1) validateMediaChannelServiceInterfacePointSpec(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.OtsiServiceInterfacePointSpec) { // not required
+	if swag.IsZero(m.MediaChannelServiceInterfacePointSpec) { // not required
 		return nil
 	}
 
-	if m.OtsiServiceInterfacePointSpec != nil {
-		if err := m.OtsiServiceInterfacePointSpec.Validate(formats); err != nil {
+	if m.MediaChannelServiceInterfacePointSpec != nil {
+		if err := m.MediaChannelServiceInterfacePointSpec.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("otsi-service-interface-point-spec")
+				return ve.ValidateName("media-channel-service-interface-point-spec")
 			}
 			return err
 		}
