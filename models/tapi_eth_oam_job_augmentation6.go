@@ -17,14 +17,14 @@ import (
 type TapiEthOamJobAugmentation6 struct {
 
 	// none
-	EthLoopbackJob *TapiEthEthLoopbackJob `json:"eth-loopback-job,omitempty"`
+	EthProActive1wayMeasurementJob *TapiEthEthProActive1wayMeasurementJob `json:"eth-pro-active-1way-measurement-job,omitempty"`
 }
 
 // Validate validates this tapi eth oam job augmentation6
 func (m *TapiEthOamJobAugmentation6) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateEthLoopbackJob(formats); err != nil {
+	if err := m.validateEthProActive1wayMeasurementJob(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -34,16 +34,16 @@ func (m *TapiEthOamJobAugmentation6) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *TapiEthOamJobAugmentation6) validateEthLoopbackJob(formats strfmt.Registry) error {
+func (m *TapiEthOamJobAugmentation6) validateEthProActive1wayMeasurementJob(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.EthLoopbackJob) { // not required
+	if swag.IsZero(m.EthProActive1wayMeasurementJob) { // not required
 		return nil
 	}
 
-	if m.EthLoopbackJob != nil {
-		if err := m.EthLoopbackJob.Validate(formats); err != nil {
+	if m.EthProActive1wayMeasurementJob != nil {
+		if err := m.EthProActive1wayMeasurementJob.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("eth-loopback-job")
+				return ve.ValidateName("eth-pro-active-1way-measurement-job")
 			}
 			return err
 		}

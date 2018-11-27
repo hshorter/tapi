@@ -17,14 +17,14 @@ import (
 type TapiEthPmThresholdDataAugmentation2 struct {
 
 	// none
-	EthLmThresholdData *TapiEthEthLmThresholdData `json:"eth-lm-threshold-data,omitempty"`
+	Eth1LmThresholdData *TapiEthEth1LmThresholdData `json:"eth-1-lm-threshold-data,omitempty"`
 }
 
 // Validate validates this tapi eth pm threshold data augmentation2
 func (m *TapiEthPmThresholdDataAugmentation2) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateEthLmThresholdData(formats); err != nil {
+	if err := m.validateEth1LmThresholdData(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -34,16 +34,16 @@ func (m *TapiEthPmThresholdDataAugmentation2) Validate(formats strfmt.Registry) 
 	return nil
 }
 
-func (m *TapiEthPmThresholdDataAugmentation2) validateEthLmThresholdData(formats strfmt.Registry) error {
+func (m *TapiEthPmThresholdDataAugmentation2) validateEth1LmThresholdData(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.EthLmThresholdData) { // not required
+	if swag.IsZero(m.Eth1LmThresholdData) { // not required
 		return nil
 	}
 
-	if m.EthLmThresholdData != nil {
-		if err := m.EthLmThresholdData.Validate(formats); err != nil {
+	if m.Eth1LmThresholdData != nil {
+		if err := m.Eth1LmThresholdData.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("eth-lm-threshold-data")
+				return ve.ValidateName("eth-1-lm-threshold-data")
 			}
 			return err
 		}

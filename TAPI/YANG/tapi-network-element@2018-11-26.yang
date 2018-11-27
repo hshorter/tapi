@@ -36,6 +36,26 @@ module tapi-network-element {
     /***********************
     * package object-classes
     **********************/
+    grouping connection {
+        leaf ip {
+            type string;
+            description "none";
+        }
+        leaf port {
+            type uint16;
+            default 830;
+            description "none";
+        }
+        leaf username {
+            type string;
+            description "none";
+        }
+        leaf password {
+            type string;
+            description "none";
+        }
+        description "none";
+    }
     grouping network-element {
         leaf network-element-id {
             type string;
@@ -57,6 +77,7 @@ module tapi-network-element {
             type string;
             description "The Network Element version.";
         }
+        uses connection;
         description "none";
     }
     /***********************
@@ -89,21 +110,8 @@ module tapi-network-element {
      rpc create-network-element {
          description "none";
          input {
-            leaf network-element-id-or-name {
-                type string;
-                description "none";
-            }
-            leaf port {
-                type uint16;
-                default 830;
-                description "none";
-            }
-            leaf username {
-                type string;
-                description "none";
-            }
-            leaf password {
-                type string;
+            container netconf-connection {
+                uses connection;
                 description "none";
             }
          }

@@ -3312,19 +3312,6 @@ func init() {
     "tapi.eth.OamJobAugmentation1": {
       "type": "object",
       "properties": {
-        "eth-on-demand-1way-measurement-job": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemand1wayMeasurementJob"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.OamJobAugmentation2": {
-      "type": "object",
-      "properties": {
         "eth-pro-active-2way-measurement-job": {
           "description": "none",
           "$ref": "#/definitions/tapi.eth.EthProActive2wayMeasurementJob"
@@ -3335,33 +3322,20 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
+    "tapi.eth.OamJobAugmentation2": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-1way-measurement-job": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemand1wayMeasurementJob"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
     "tapi.eth.OamJobAugmentation3": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-2way-measurement-job": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemand2wayMeasurementJob"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.OamJobAugmentation4": {
-      "type": "object",
-      "properties": {
-        "eth-link-trace-job": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthLinkTraceJob"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.OamJobAugmentation5": {
       "type": "object",
       "properties": {
         "eth-test-job": {
@@ -3374,12 +3348,38 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
+    "tapi.eth.OamJobAugmentation4": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-2way-measurement-job": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemand2wayMeasurementJob"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.OamJobAugmentation5": {
+      "type": "object",
+      "properties": {
+        "eth-link-trace-job": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthLinkTraceJob"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
     "tapi.eth.OamJobAugmentation6": {
       "type": "object",
       "properties": {
-        "eth-loopback-job": {
+        "eth-pro-active-1way-measurement-job": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthLoopbackJob"
+          "$ref": "#/definitions/tapi.eth.EthProActive1wayMeasurementJob"
         }
       },
       "x-augmentation": {
@@ -3390,9 +3390,9 @@ func init() {
     "tapi.eth.OamJobAugmentation7": {
       "type": "object",
       "properties": {
-        "eth-pro-active-1way-measurement-job": {
+        "eth-loopback-job": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActive1wayMeasurementJob"
+          "$ref": "#/definitions/tapi.eth.EthLoopbackJob"
         }
       },
       "x-augmentation": {
@@ -3469,9 +3469,9 @@ func init() {
     "tapi.eth.PmCurrentDataAugmentation1": {
       "type": "object",
       "properties": {
-        "eth-test-result-data": {
+        "eth-link-trace-result-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthTestResultData"
+          "$ref": "#/definitions/tapi.eth.EthLinkTraceResultData"
         }
       },
       "x-augmentation": {
@@ -3480,19 +3480,6 @@ func init() {
       }
     },
     "tapi.eth.PmCurrentDataAugmentation10": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-1-lm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemand1LmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation11": {
       "type": "object",
       "properties": {
         "eth-pro-active-dm-performance-data": {
@@ -3505,85 +3492,7 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
-    "tapi.eth.PmCurrentDataAugmentation2": {
-      "type": "object",
-      "properties": {
-        "eth-pro-active-1-lm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActive1LmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation3": {
-      "type": "object",
-      "properties": {
-        "eth-pro-active-lm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActiveLmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation4": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-1-dm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation5": {
-      "type": "object",
-      "properties": {
-        "eth-link-trace-result-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthLinkTraceResultData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation6": {
-      "type": "object",
-      "properties": {
-        "eth-pro-active-1-dm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActive1DmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation7": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-dm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation8": {
+    "tapi.eth.PmCurrentDataAugmentation11": {
       "type": "object",
       "properties": {
         "eth-loopback-result-data": {
@@ -3596,46 +3505,7 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
-    "tapi.eth.PmCurrentDataAugmentation9": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-lm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemandLmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmHistoryDataAugmentation1": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-lm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemandLmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmHistoryDataAugmentation2": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-dm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmHistoryDataAugmentation3": {
+    "tapi.eth.PmCurrentDataAugmentation2": {
       "type": "object",
       "properties": {
         "eth-on-demand-1-lm-performance-data": {
@@ -3648,12 +3518,142 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
+    "tapi.eth.PmCurrentDataAugmentation3": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-dm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation4": {
+      "type": "object",
+      "properties": {
+        "eth-pro-active-1-dm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthProActive1DmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation5": {
+      "type": "object",
+      "properties": {
+        "eth-test-result-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthTestResultData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation6": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-lm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemandLmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation7": {
+      "type": "object",
+      "properties": {
+        "eth-pro-active-1-lm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthProActive1LmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation8": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-1-dm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation9": {
+      "type": "object",
+      "properties": {
+        "eth-pro-active-lm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthProActiveLmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmHistoryDataAugmentation1": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-1-dm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmHistoryDataAugmentation2": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-lm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemandLmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmHistoryDataAugmentation3": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-dm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
     "tapi.eth.PmHistoryDataAugmentation4": {
       "type": "object",
       "properties": {
-        "eth-pro-active-dm-performance-data": {
+        "eth-on-demand-1-lm-performance-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActiveDmPerformanceData"
+          "$ref": "#/definitions/tapi.eth.EthOnDemand1LmPerformanceData"
         }
       },
       "x-augmentation": {
@@ -3664,9 +3664,9 @@ func init() {
     "tapi.eth.PmHistoryDataAugmentation5": {
       "type": "object",
       "properties": {
-        "eth-on-demand-1-dm-performance-data": {
+        "eth-pro-active-lm-performance-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
+          "$ref": "#/definitions/tapi.eth.EthProActiveLmPerformanceData"
         }
       },
       "x-augmentation": {
@@ -3690,9 +3690,9 @@ func init() {
     "tapi.eth.PmHistoryDataAugmentation7": {
       "type": "object",
       "properties": {
-        "eth-pro-active-1-dm-performance-data": {
+        "eth-pro-active-dm-performance-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActive1DmPerformanceData"
+          "$ref": "#/definitions/tapi.eth.EthProActiveDmPerformanceData"
         }
       },
       "x-augmentation": {
@@ -3703,9 +3703,9 @@ func init() {
     "tapi.eth.PmHistoryDataAugmentation8": {
       "type": "object",
       "properties": {
-        "eth-pro-active-lm-performance-data": {
+        "eth-pro-active-1-dm-performance-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActiveLmPerformanceData"
+          "$ref": "#/definitions/tapi.eth.EthProActive1DmPerformanceData"
         }
       },
       "x-augmentation": {
@@ -3714,19 +3714,6 @@ func init() {
       }
     },
     "tapi.eth.PmThresholdDataAugmentation1": {
-      "type": "object",
-      "properties": {
-        "eth-dm-threshold-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthDmThresholdData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmThresholdDataAugmentation2": {
       "type": "object",
       "properties": {
         "eth-lm-threshold-data": {
@@ -3739,12 +3726,25 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
+    "tapi.eth.PmThresholdDataAugmentation2": {
+      "type": "object",
+      "properties": {
+        "eth-1-lm-threshold-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.Eth1LmThresholdData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
     "tapi.eth.PmThresholdDataAugmentation3": {
       "type": "object",
       "properties": {
-        "eth-1-dm-threshold-data": {
+        "eth-dm-threshold-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.Eth1DmThresholdData"
+          "$ref": "#/definitions/tapi.eth.EthDmThresholdData"
         }
       },
       "x-augmentation": {
@@ -3755,9 +3755,9 @@ func init() {
     "tapi.eth.PmThresholdDataAugmentation4": {
       "type": "object",
       "properties": {
-        "eth-1-lm-threshold-data": {
+        "eth-1-dm-threshold-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.Eth1LmThresholdData"
+          "$ref": "#/definitions/tapi.eth.Eth1DmThresholdData"
         }
       },
       "x-augmentation": {
@@ -3836,28 +3836,37 @@ func init() {
         }
       }
     },
+    "tapi.network.element.Connection": {
+      "type": "object",
+      "properties": {
+        "ip": {
+          "description": "none",
+          "type": "string"
+        },
+        "password": {
+          "description": "none",
+          "type": "string"
+        },
+        "port": {
+          "description": "none",
+          "type": "integer",
+          "format": "int32",
+          "default": 830
+        },
+        "username": {
+          "description": "none",
+          "type": "string"
+        }
+      }
+    },
     "tapi.network.element.CreateNetworkElementInput": {
       "properties": {
         "input": {
           "type": "object",
           "properties": {
-            "network-element-id-or-name": {
+            "netconf-connection": {
               "description": "none",
-              "type": "string"
-            },
-            "password": {
-              "description": "none",
-              "type": "string"
-            },
-            "port": {
-              "description": "none",
-              "type": "integer",
-              "format": "int32",
-              "default": 830
-            },
-            "username": {
-              "description": "none",
-              "type": "string"
+              "$ref": "#/definitions/tapi.network.element.Connection"
             }
           }
         }
@@ -3932,29 +3941,37 @@ func init() {
       }
     },
     "tapi.network.element.NetworkElement": {
-      "type": "object",
-      "properties": {
-        "network-element-id": {
-          "description": "The Network Element id.",
-          "type": "string"
+      "allOf": [
+        {
+          "$ref": "#/definitions/tapi.network.element.Connection"
         },
-        "network-element-model": {
-          "description": "The Network Element model.",
-          "type": "string"
-        },
-        "network-element-name": {
-          "description": "The Network Element name.",
-          "type": "string"
-        },
-        "network-element-vendor": {
-          "description": "The Network Element vendor.",
-          "type": "string"
-        },
-        "network-element-version": {
-          "description": "The Network Element version.",
-          "type": "string"
+        {
+          "description": "none",
+          "type": "object",
+          "properties": {
+            "network-element-id": {
+              "description": "The Network Element id.",
+              "type": "string"
+            },
+            "network-element-model": {
+              "description": "The Network Element model.",
+              "type": "string"
+            },
+            "network-element-name": {
+              "description": "The Network Element name.",
+              "type": "string"
+            },
+            "network-element-vendor": {
+              "description": "The Network Element vendor.",
+              "type": "string"
+            },
+            "network-element-version": {
+              "description": "The Network Element version.",
+              "type": "string"
+            }
+          }
         }
-      }
+      ]
     },
     "tapi.notification.AlarmInfo": {
       "type": "object",
@@ -6743,9 +6760,9 @@ func init() {
     "tapi.photonic.media.ServiceInterfacePointAugmentation1": {
       "type": "object",
       "properties": {
-        "media-channel-service-interface-point-spec": {
+        "otsi-service-interface-point-spec": {
           "description": "none",
-          "$ref": "#/definitions/tapi.photonic.media.MediaChannelServiceInterfacePointSpec"
+          "$ref": "#/definitions/tapi.photonic.media.OtsiServiceInterfacePointSpec"
         }
       },
       "x-augmentation": {
@@ -6756,9 +6773,9 @@ func init() {
     "tapi.photonic.media.ServiceInterfacePointAugmentation2": {
       "type": "object",
       "properties": {
-        "otsi-service-interface-point-spec": {
+        "media-channel-service-interface-point-spec": {
           "description": "none",
-          "$ref": "#/definitions/tapi.photonic.media.OtsiServiceInterfacePointSpec"
+          "$ref": "#/definitions/tapi.photonic.media.MediaChannelServiceInterfacePointSpec"
         }
       },
       "x-augmentation": {
@@ -11193,19 +11210,6 @@ func init() {
     "tapi.eth.OamJobAugmentation1": {
       "type": "object",
       "properties": {
-        "eth-on-demand-1way-measurement-job": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemand1wayMeasurementJob"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.OamJobAugmentation2": {
-      "type": "object",
-      "properties": {
         "eth-pro-active-2way-measurement-job": {
           "description": "none",
           "$ref": "#/definitions/tapi.eth.EthProActive2wayMeasurementJob"
@@ -11216,33 +11220,20 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
+    "tapi.eth.OamJobAugmentation2": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-1way-measurement-job": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemand1wayMeasurementJob"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
     "tapi.eth.OamJobAugmentation3": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-2way-measurement-job": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemand2wayMeasurementJob"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.OamJobAugmentation4": {
-      "type": "object",
-      "properties": {
-        "eth-link-trace-job": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthLinkTraceJob"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.OamJobAugmentation5": {
       "type": "object",
       "properties": {
         "eth-test-job": {
@@ -11255,12 +11246,38 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
+    "tapi.eth.OamJobAugmentation4": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-2way-measurement-job": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemand2wayMeasurementJob"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.OamJobAugmentation5": {
+      "type": "object",
+      "properties": {
+        "eth-link-trace-job": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthLinkTraceJob"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
     "tapi.eth.OamJobAugmentation6": {
       "type": "object",
       "properties": {
-        "eth-loopback-job": {
+        "eth-pro-active-1way-measurement-job": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthLoopbackJob"
+          "$ref": "#/definitions/tapi.eth.EthProActive1wayMeasurementJob"
         }
       },
       "x-augmentation": {
@@ -11271,9 +11288,9 @@ func init() {
     "tapi.eth.OamJobAugmentation7": {
       "type": "object",
       "properties": {
-        "eth-pro-active-1way-measurement-job": {
+        "eth-loopback-job": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActive1wayMeasurementJob"
+          "$ref": "#/definitions/tapi.eth.EthLoopbackJob"
         }
       },
       "x-augmentation": {
@@ -11350,9 +11367,9 @@ func init() {
     "tapi.eth.PmCurrentDataAugmentation1": {
       "type": "object",
       "properties": {
-        "eth-test-result-data": {
+        "eth-link-trace-result-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthTestResultData"
+          "$ref": "#/definitions/tapi.eth.EthLinkTraceResultData"
         }
       },
       "x-augmentation": {
@@ -11361,19 +11378,6 @@ func init() {
       }
     },
     "tapi.eth.PmCurrentDataAugmentation10": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-1-lm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemand1LmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation11": {
       "type": "object",
       "properties": {
         "eth-pro-active-dm-performance-data": {
@@ -11386,85 +11390,7 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
-    "tapi.eth.PmCurrentDataAugmentation2": {
-      "type": "object",
-      "properties": {
-        "eth-pro-active-1-lm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActive1LmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation3": {
-      "type": "object",
-      "properties": {
-        "eth-pro-active-lm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActiveLmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation4": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-1-dm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation5": {
-      "type": "object",
-      "properties": {
-        "eth-link-trace-result-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthLinkTraceResultData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation6": {
-      "type": "object",
-      "properties": {
-        "eth-pro-active-1-dm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActive1DmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation7": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-dm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmCurrentDataAugmentation8": {
+    "tapi.eth.PmCurrentDataAugmentation11": {
       "type": "object",
       "properties": {
         "eth-loopback-result-data": {
@@ -11477,46 +11403,7 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
-    "tapi.eth.PmCurrentDataAugmentation9": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-lm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemandLmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmHistoryDataAugmentation1": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-lm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemandLmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmHistoryDataAugmentation2": {
-      "type": "object",
-      "properties": {
-        "eth-on-demand-dm-performance-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmHistoryDataAugmentation3": {
+    "tapi.eth.PmCurrentDataAugmentation2": {
       "type": "object",
       "properties": {
         "eth-on-demand-1-lm-performance-data": {
@@ -11529,12 +11416,142 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
+    "tapi.eth.PmCurrentDataAugmentation3": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-dm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation4": {
+      "type": "object",
+      "properties": {
+        "eth-pro-active-1-dm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthProActive1DmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation5": {
+      "type": "object",
+      "properties": {
+        "eth-test-result-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthTestResultData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation6": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-lm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemandLmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation7": {
+      "type": "object",
+      "properties": {
+        "eth-pro-active-1-lm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthProActive1LmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation8": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-1-dm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmCurrentDataAugmentation9": {
+      "type": "object",
+      "properties": {
+        "eth-pro-active-lm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthProActiveLmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmHistoryDataAugmentation1": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-1-dm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmHistoryDataAugmentation2": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-lm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemandLmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
+    "tapi.eth.PmHistoryDataAugmentation3": {
+      "type": "object",
+      "properties": {
+        "eth-on-demand-dm-performance-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
     "tapi.eth.PmHistoryDataAugmentation4": {
       "type": "object",
       "properties": {
-        "eth-pro-active-dm-performance-data": {
+        "eth-on-demand-1-lm-performance-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActiveDmPerformanceData"
+          "$ref": "#/definitions/tapi.eth.EthOnDemand1LmPerformanceData"
         }
       },
       "x-augmentation": {
@@ -11545,9 +11562,9 @@ func init() {
     "tapi.eth.PmHistoryDataAugmentation5": {
       "type": "object",
       "properties": {
-        "eth-on-demand-1-dm-performance-data": {
+        "eth-pro-active-lm-performance-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
+          "$ref": "#/definitions/tapi.eth.EthProActiveLmPerformanceData"
         }
       },
       "x-augmentation": {
@@ -11571,9 +11588,9 @@ func init() {
     "tapi.eth.PmHistoryDataAugmentation7": {
       "type": "object",
       "properties": {
-        "eth-pro-active-1-dm-performance-data": {
+        "eth-pro-active-dm-performance-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActive1DmPerformanceData"
+          "$ref": "#/definitions/tapi.eth.EthProActiveDmPerformanceData"
         }
       },
       "x-augmentation": {
@@ -11584,9 +11601,9 @@ func init() {
     "tapi.eth.PmHistoryDataAugmentation8": {
       "type": "object",
       "properties": {
-        "eth-pro-active-lm-performance-data": {
+        "eth-pro-active-1-dm-performance-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthProActiveLmPerformanceData"
+          "$ref": "#/definitions/tapi.eth.EthProActive1DmPerformanceData"
         }
       },
       "x-augmentation": {
@@ -11595,19 +11612,6 @@ func init() {
       }
     },
     "tapi.eth.PmThresholdDataAugmentation1": {
-      "type": "object",
-      "properties": {
-        "eth-dm-threshold-data": {
-          "description": "none",
-          "$ref": "#/definitions/tapi.eth.EthDmThresholdData"
-        }
-      },
-      "x-augmentation": {
-        "namespace": "urn:onf:otcc:yang:tapi-eth",
-        "prefix": "tapi-eth"
-      }
-    },
-    "tapi.eth.PmThresholdDataAugmentation2": {
       "type": "object",
       "properties": {
         "eth-lm-threshold-data": {
@@ -11620,12 +11624,25 @@ func init() {
         "prefix": "tapi-eth"
       }
     },
+    "tapi.eth.PmThresholdDataAugmentation2": {
+      "type": "object",
+      "properties": {
+        "eth-1-lm-threshold-data": {
+          "description": "none",
+          "$ref": "#/definitions/tapi.eth.Eth1LmThresholdData"
+        }
+      },
+      "x-augmentation": {
+        "namespace": "urn:onf:otcc:yang:tapi-eth",
+        "prefix": "tapi-eth"
+      }
+    },
     "tapi.eth.PmThresholdDataAugmentation3": {
       "type": "object",
       "properties": {
-        "eth-1-dm-threshold-data": {
+        "eth-dm-threshold-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.Eth1DmThresholdData"
+          "$ref": "#/definitions/tapi.eth.EthDmThresholdData"
         }
       },
       "x-augmentation": {
@@ -11636,9 +11653,9 @@ func init() {
     "tapi.eth.PmThresholdDataAugmentation4": {
       "type": "object",
       "properties": {
-        "eth-1-lm-threshold-data": {
+        "eth-1-dm-threshold-data": {
           "description": "none",
-          "$ref": "#/definitions/tapi.eth.Eth1LmThresholdData"
+          "$ref": "#/definitions/tapi.eth.Eth1DmThresholdData"
         }
       },
       "x-augmentation": {
@@ -11717,28 +11734,37 @@ func init() {
         }
       }
     },
+    "tapi.network.element.Connection": {
+      "type": "object",
+      "properties": {
+        "ip": {
+          "description": "none",
+          "type": "string"
+        },
+        "password": {
+          "description": "none",
+          "type": "string"
+        },
+        "port": {
+          "description": "none",
+          "type": "integer",
+          "format": "int32",
+          "default": 830
+        },
+        "username": {
+          "description": "none",
+          "type": "string"
+        }
+      }
+    },
     "tapi.network.element.CreateNetworkElementInput": {
       "properties": {
         "input": {
           "type": "object",
           "properties": {
-            "network-element-id-or-name": {
+            "netconf-connection": {
               "description": "none",
-              "type": "string"
-            },
-            "password": {
-              "description": "none",
-              "type": "string"
-            },
-            "port": {
-              "description": "none",
-              "type": "integer",
-              "format": "int32",
-              "default": 830
-            },
-            "username": {
-              "description": "none",
-              "type": "string"
+              "$ref": "#/definitions/tapi.network.element.Connection"
             }
           }
         }
@@ -11813,29 +11839,37 @@ func init() {
       }
     },
     "tapi.network.element.NetworkElement": {
-      "type": "object",
-      "properties": {
-        "network-element-id": {
-          "description": "The Network Element id.",
-          "type": "string"
+      "allOf": [
+        {
+          "$ref": "#/definitions/tapi.network.element.Connection"
         },
-        "network-element-model": {
-          "description": "The Network Element model.",
-          "type": "string"
-        },
-        "network-element-name": {
-          "description": "The Network Element name.",
-          "type": "string"
-        },
-        "network-element-vendor": {
-          "description": "The Network Element vendor.",
-          "type": "string"
-        },
-        "network-element-version": {
-          "description": "The Network Element version.",
-          "type": "string"
+        {
+          "description": "none",
+          "type": "object",
+          "properties": {
+            "network-element-id": {
+              "description": "The Network Element id.",
+              "type": "string"
+            },
+            "network-element-model": {
+              "description": "The Network Element model.",
+              "type": "string"
+            },
+            "network-element-name": {
+              "description": "The Network Element name.",
+              "type": "string"
+            },
+            "network-element-vendor": {
+              "description": "The Network Element vendor.",
+              "type": "string"
+            },
+            "network-element-version": {
+              "description": "The Network Element version.",
+              "type": "string"
+            }
+          }
         }
-      }
+      ]
     },
     "tapi.notification.AlarmInfo": {
       "type": "object",
@@ -14624,9 +14658,9 @@ func init() {
     "tapi.photonic.media.ServiceInterfacePointAugmentation1": {
       "type": "object",
       "properties": {
-        "media-channel-service-interface-point-spec": {
+        "otsi-service-interface-point-spec": {
           "description": "none",
-          "$ref": "#/definitions/tapi.photonic.media.MediaChannelServiceInterfacePointSpec"
+          "$ref": "#/definitions/tapi.photonic.media.OtsiServiceInterfacePointSpec"
         }
       },
       "x-augmentation": {
@@ -14637,9 +14671,9 @@ func init() {
     "tapi.photonic.media.ServiceInterfacePointAugmentation2": {
       "type": "object",
       "properties": {
-        "otsi-service-interface-point-spec": {
+        "media-channel-service-interface-point-spec": {
           "description": "none",
-          "$ref": "#/definitions/tapi.photonic.media.OtsiServiceInterfacePointSpec"
+          "$ref": "#/definitions/tapi.photonic.media.MediaChannelServiceInterfacePointSpec"
         }
       },
       "x-augmentation": {

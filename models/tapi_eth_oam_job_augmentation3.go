@@ -17,14 +17,14 @@ import (
 type TapiEthOamJobAugmentation3 struct {
 
 	// none
-	EthOnDemand2wayMeasurementJob *TapiEthEthOnDemand2wayMeasurementJob `json:"eth-on-demand-2way-measurement-job,omitempty"`
+	EthTestJob *TapiEthEthTestJob `json:"eth-test-job,omitempty"`
 }
 
 // Validate validates this tapi eth oam job augmentation3
 func (m *TapiEthOamJobAugmentation3) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateEthOnDemand2wayMeasurementJob(formats); err != nil {
+	if err := m.validateEthTestJob(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -34,16 +34,16 @@ func (m *TapiEthOamJobAugmentation3) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *TapiEthOamJobAugmentation3) validateEthOnDemand2wayMeasurementJob(formats strfmt.Registry) error {
+func (m *TapiEthOamJobAugmentation3) validateEthTestJob(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.EthOnDemand2wayMeasurementJob) { // not required
+	if swag.IsZero(m.EthTestJob) { // not required
 		return nil
 	}
 
-	if m.EthOnDemand2wayMeasurementJob != nil {
-		if err := m.EthOnDemand2wayMeasurementJob.Validate(formats); err != nil {
+	if m.EthTestJob != nil {
+		if err := m.EthTestJob.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("eth-on-demand-2way-measurement-job")
+				return ve.ValidateName("eth-test-job")
 			}
 			return err
 		}

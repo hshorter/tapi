@@ -17,14 +17,14 @@ import (
 type TapiEthPmCurrentDataAugmentation7 struct {
 
 	// none
-	EthOnDemandDmPerformanceData *TapiEthEthOnDemandDmPerformanceData `json:"eth-on-demand-dm-performance-data,omitempty"`
+	EthProActive1LmPerformanceData *TapiEthEthProActive1LmPerformanceData `json:"eth-pro-active-1-lm-performance-data,omitempty"`
 }
 
 // Validate validates this tapi eth pm current data augmentation7
 func (m *TapiEthPmCurrentDataAugmentation7) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateEthOnDemandDmPerformanceData(formats); err != nil {
+	if err := m.validateEthProActive1LmPerformanceData(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -34,16 +34,16 @@ func (m *TapiEthPmCurrentDataAugmentation7) Validate(formats strfmt.Registry) er
 	return nil
 }
 
-func (m *TapiEthPmCurrentDataAugmentation7) validateEthOnDemandDmPerformanceData(formats strfmt.Registry) error {
+func (m *TapiEthPmCurrentDataAugmentation7) validateEthProActive1LmPerformanceData(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.EthOnDemandDmPerformanceData) { // not required
+	if swag.IsZero(m.EthProActive1LmPerformanceData) { // not required
 		return nil
 	}
 
-	if m.EthOnDemandDmPerformanceData != nil {
-		if err := m.EthOnDemandDmPerformanceData.Validate(formats); err != nil {
+	if m.EthProActive1LmPerformanceData != nil {
+		if err := m.EthProActive1LmPerformanceData.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("eth-on-demand-dm-performance-data")
+				return ve.ValidateName("eth-pro-active-1-lm-performance-data")
 			}
 			return err
 		}

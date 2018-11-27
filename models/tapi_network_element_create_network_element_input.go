@@ -75,20 +75,38 @@ func (m *TapiNetworkElementCreateNetworkElementInput) UnmarshalBinary(b []byte) 
 type TapiNetworkElementCreateNetworkElementInputInput struct {
 
 	// none
-	NetworkElementIDOrName string `json:"network-element-id-or-name,omitempty"`
-
-	// none
-	Password string `json:"password,omitempty"`
-
-	// none
-	Port *int32 `json:"port,omitempty"`
-
-	// none
-	Username string `json:"username,omitempty"`
+	NetconfConnection *TapiNetworkElementConnection `json:"netconf-connection,omitempty"`
 }
 
 // Validate validates this tapi network element create network element input input
 func (m *TapiNetworkElementCreateNetworkElementInputInput) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateNetconfConnection(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *TapiNetworkElementCreateNetworkElementInputInput) validateNetconfConnection(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.NetconfConnection) { // not required
+		return nil
+	}
+
+	if m.NetconfConnection != nil {
+		if err := m.NetconfConnection.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("input" + "." + "netconf-connection")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

@@ -8,12 +8,14 @@ package models
 import (
 	strfmt "github.com/go-openapi/strfmt"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/swag"
 )
 
 // TapiNetworkElementNetworkElement tapi network element network element
 // swagger:model tapi.network.element.NetworkElement
 type TapiNetworkElementNetworkElement struct {
+	TapiNetworkElementConnection
 
 	// The Network Element id.
 	NetworkElementID string `json:"network-element-id,omitempty"`
@@ -31,8 +33,97 @@ type TapiNetworkElementNetworkElement struct {
 	NetworkElementVersion string `json:"network-element-version,omitempty"`
 }
 
+// UnmarshalJSON unmarshals this object from a JSON structure
+func (m *TapiNetworkElementNetworkElement) UnmarshalJSON(raw []byte) error {
+	// AO0
+	var aO0 TapiNetworkElementConnection
+	if err := swag.ReadJSON(raw, &aO0); err != nil {
+		return err
+	}
+	m.TapiNetworkElementConnection = aO0
+
+	// AO1
+	var dataAO1 struct {
+		NetworkElementID string `json:"network-element-id,omitempty"`
+
+		NetworkElementModel string `json:"network-element-model,omitempty"`
+
+		NetworkElementName string `json:"network-element-name,omitempty"`
+
+		NetworkElementVendor string `json:"network-element-vendor,omitempty"`
+
+		NetworkElementVersion string `json:"network-element-version,omitempty"`
+	}
+	if err := swag.ReadJSON(raw, &dataAO1); err != nil {
+		return err
+	}
+
+	m.NetworkElementID = dataAO1.NetworkElementID
+
+	m.NetworkElementModel = dataAO1.NetworkElementModel
+
+	m.NetworkElementName = dataAO1.NetworkElementName
+
+	m.NetworkElementVendor = dataAO1.NetworkElementVendor
+
+	m.NetworkElementVersion = dataAO1.NetworkElementVersion
+
+	return nil
+}
+
+// MarshalJSON marshals this object to a JSON structure
+func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
+	_parts := make([][]byte, 0, 2)
+
+	aO0, err := swag.WriteJSON(m.TapiNetworkElementConnection)
+	if err != nil {
+		return nil, err
+	}
+	_parts = append(_parts, aO0)
+
+	var dataAO1 struct {
+		NetworkElementID string `json:"network-element-id,omitempty"`
+
+		NetworkElementModel string `json:"network-element-model,omitempty"`
+
+		NetworkElementName string `json:"network-element-name,omitempty"`
+
+		NetworkElementVendor string `json:"network-element-vendor,omitempty"`
+
+		NetworkElementVersion string `json:"network-element-version,omitempty"`
+	}
+
+	dataAO1.NetworkElementID = m.NetworkElementID
+
+	dataAO1.NetworkElementModel = m.NetworkElementModel
+
+	dataAO1.NetworkElementName = m.NetworkElementName
+
+	dataAO1.NetworkElementVendor = m.NetworkElementVendor
+
+	dataAO1.NetworkElementVersion = m.NetworkElementVersion
+
+	jsonDataAO1, errAO1 := swag.WriteJSON(dataAO1)
+	if errAO1 != nil {
+		return nil, errAO1
+	}
+	_parts = append(_parts, jsonDataAO1)
+
+	return swag.ConcatJSON(_parts...), nil
+}
+
 // Validate validates this tapi network element network element
 func (m *TapiNetworkElementNetworkElement) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	// validation for a type composition with TapiNetworkElementConnection
+	if err := m.TapiNetworkElementConnection.Validate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
 	return nil
 }
 
