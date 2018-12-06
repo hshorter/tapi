@@ -3953,6 +3953,15 @@ func init() {
               "description": "The Network Element id.",
               "type": "string"
             },
+            "network-element-isDiscoverable": {
+              "description": "Indication that the Network Element is Discoverable.",
+              "type": "boolean",
+              "default": false
+            },
+            "network-element-lastSuccessfulDiscovery": {
+              "description": "The last time the Network Element was successfully discovered.",
+              "type": "string"
+            },
             "network-element-model": {
               "description": "The Network Element model.",
               "type": "string"
@@ -11849,6 +11858,15 @@ func init() {
           "properties": {
             "network-element-id": {
               "description": "The Network Element id.",
+              "type": "string"
+            },
+            "network-element-isDiscoverable": {
+              "description": "Indication that the Network Element is Discoverable.",
+              "type": "boolean",
+              "default": false
+            },
+            "network-element-lastSuccessfulDiscovery": {
+              "description": "The last time the Network Element was successfully discovered.",
               "type": "string"
             },
             "network-element-model": {

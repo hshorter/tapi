@@ -2947,12 +2947,19 @@ definitions:
         network-element-model:
           type: "string"
           description: "The Network Element model."
+        network-element-lastSuccessfulDiscovery:
+          type: "string"
+          description: "The last time the Network Element was successfully discovered."
         network-element-version:
           type: "string"
           description: "The Network Element version."
         network-element-vendor:
           type: "string"
           description: "The Network Element vendor."
+        network-element-isDiscoverable:
+          type: "boolean"
+          description: "Indication that the Network Element is Discoverable."
+          default: false
         network-element-name:
           type: "string"
           description: "The Network Element name."
