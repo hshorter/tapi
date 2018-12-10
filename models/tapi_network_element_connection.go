@@ -18,6 +18,9 @@ type TapiNetworkElementConnection struct {
 	// none
 	IP string `json:"ip,omitempty"`
 
+	// Indication that the Network Element is Discoverable.
+	IsDiscoverable *bool `json:"isDiscoverable,omitempty"`
+
 	// none
 	Password string `json:"password,omitempty"`
 

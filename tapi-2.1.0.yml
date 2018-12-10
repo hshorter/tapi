@@ -2875,6 +2875,10 @@ definitions:
   tapi.network.element.Connection:
     type: "object"
     properties:
+      isDiscoverable:
+        type: "boolean"
+        description: "Indication that the Network Element is Discoverable."
+        default: false
       password:
         type: "string"
         description: "none"
@@ -2956,10 +2960,6 @@ definitions:
         network-element-vendor:
           type: "string"
           description: "The Network Element vendor."
-        network-element-isDiscoverable:
-          type: "boolean"
-          description: "Indication that the Network Element is Discoverable."
-          default: false
         network-element-name:
           type: "string"
           description: "The Network Element name."

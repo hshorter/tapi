@@ -20,9 +20,6 @@ type TapiNetworkElementNetworkElement struct {
 	// The Network Element id.
 	NetworkElementID string `json:"network-element-id,omitempty"`
 
-	// Indication that the Network Element is Discoverable.
-	NetworkElementIsDiscoverable *bool `json:"network-element-isDiscoverable,omitempty"`
-
 	// The last time the Network Element was successfully discovered.
 	NetworkElementLastSuccessfulDiscovery string `json:"network-element-lastSuccessfulDiscovery,omitempty"`
 
@@ -52,8 +49,6 @@ func (m *TapiNetworkElementNetworkElement) UnmarshalJSON(raw []byte) error {
 	var dataAO1 struct {
 		NetworkElementID string `json:"network-element-id,omitempty"`
 
-		NetworkElementIsDiscoverable *bool `json:"network-element-isDiscoverable,omitempty"`
-
 		NetworkElementLastSuccessfulDiscovery string `json:"network-element-lastSuccessfulDiscovery,omitempty"`
 
 		NetworkElementModel string `json:"network-element-model,omitempty"`
@@ -69,8 +64,6 @@ func (m *TapiNetworkElementNetworkElement) UnmarshalJSON(raw []byte) error {
 	}
 
 	m.NetworkElementID = dataAO1.NetworkElementID
-
-	m.NetworkElementIsDiscoverable = dataAO1.NetworkElementIsDiscoverable
 
 	m.NetworkElementLastSuccessfulDiscovery = dataAO1.NetworkElementLastSuccessfulDiscovery
 
@@ -98,8 +91,6 @@ func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
 	var dataAO1 struct {
 		NetworkElementID string `json:"network-element-id,omitempty"`
 
-		NetworkElementIsDiscoverable *bool `json:"network-element-isDiscoverable,omitempty"`
-
 		NetworkElementLastSuccessfulDiscovery string `json:"network-element-lastSuccessfulDiscovery,omitempty"`
 
 		NetworkElementModel string `json:"network-element-model,omitempty"`
@@ -112,8 +103,6 @@ func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
 	}
 
 	dataAO1.NetworkElementID = m.NetworkElementID
-
-	dataAO1.NetworkElementIsDiscoverable = m.NetworkElementIsDiscoverable
 
 	dataAO1.NetworkElementLastSuccessfulDiscovery = m.NetworkElementLastSuccessfulDiscovery
 

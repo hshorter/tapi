@@ -54,6 +54,10 @@ module tapi-network-element {
             type string;
             description "none";
         }
+        leaf isDiscoverable {
+            type boolean;
+            description "Indication that the Network Element is Discoverable.";
+        }
         description "none";
     }
     grouping network-element {
@@ -76,10 +80,6 @@ module tapi-network-element {
         leaf network-element-version {
             type string;
             description "The Network Element version.";
-        }
-        leaf network-element-isDiscoverable {
-            type boolean;
-            description "Indication that the Network Element is Discoverable.";
         }
         leaf network-element-lastSuccessfulDiscovery {
             type string;

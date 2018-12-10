@@ -3843,6 +3843,11 @@ func init() {
           "description": "none",
           "type": "string"
         },
+        "isDiscoverable": {
+          "description": "Indication that the Network Element is Discoverable.",
+          "type": "boolean",
+          "default": false
+        },
         "password": {
           "description": "none",
           "type": "string"
@@ -3952,11 +3957,6 @@ func init() {
             "network-element-id": {
               "description": "The Network Element id.",
               "type": "string"
-            },
-            "network-element-isDiscoverable": {
-              "description": "Indication that the Network Element is Discoverable.",
-              "type": "boolean",
-              "default": false
             },
             "network-element-lastSuccessfulDiscovery": {
               "description": "The last time the Network Element was successfully discovered.",
@@ -11750,6 +11750,11 @@ func init() {
           "description": "none",
           "type": "string"
         },
+        "isDiscoverable": {
+          "description": "Indication that the Network Element is Discoverable.",
+          "type": "boolean",
+          "default": false
+        },
         "password": {
           "description": "none",
           "type": "string"
@@ -11859,11 +11864,6 @@ func init() {
             "network-element-id": {
               "description": "The Network Element id.",
               "type": "string"
-            },
-            "network-element-isDiscoverable": {
-              "description": "Indication that the Network Element is Discoverable.",
-              "type": "boolean",
-              "default": false
             },
             "network-element-lastSuccessfulDiscovery": {
               "description": "The last time the Network Element was successfully discovered.",
