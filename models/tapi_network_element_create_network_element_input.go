@@ -75,7 +75,7 @@ func (m *TapiNetworkElementCreateNetworkElementInput) UnmarshalBinary(b []byte) 
 type TapiNetworkElementCreateNetworkElementInputInput struct {
 
 	// none
-	NetconfConnection *TapiNetworkElementConnection `json:"netconf-connection,omitempty"`
+	NetconfConnection *TapiNetworkElementCreatenetworkelementInputNetconfConnection `json:"netconf-connection,omitempty"`
 }
 
 // Validate validates this tapi network element create network element input input
