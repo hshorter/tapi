@@ -60,6 +60,21 @@ module tapi-network-element {
         }
         description "none";
     }
+    grouping site {
+        leaf site-name {
+            type string;
+            description "none";
+        }
+        leaf latitude {
+         type string;
+         description "none";
+        }
+        leaf longitude {
+         type string;
+         description "none";
+        }
+        description "none";
+    }
     grouping network-element {
         leaf network-element-id {
             type string;
@@ -86,6 +101,7 @@ module tapi-network-element {
             description "The last time the Network Element was successfully discovered.";
         }
         uses connection;
+        uses site;
         description "none";
     }
     /***********************

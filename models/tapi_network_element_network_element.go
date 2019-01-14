@@ -17,6 +17,8 @@ import (
 type TapiNetworkElementNetworkElement struct {
 	TapiNetworkElementConnection
 
+	TapiNetworkElementSite
+
 	// The Network Element id.
 	NetworkElementID string `json:"network-element-id,omitempty"`
 
@@ -46,7 +48,14 @@ func (m *TapiNetworkElementNetworkElement) UnmarshalJSON(raw []byte) error {
 	m.TapiNetworkElementConnection = aO0
 
 	// AO1
-	var dataAO1 struct {
+	var aO1 TapiNetworkElementSite
+	if err := swag.ReadJSON(raw, &aO1); err != nil {
+		return err
+	}
+	m.TapiNetworkElementSite = aO1
+
+	// AO2
+	var dataAO2 struct {
 		NetworkElementID string `json:"network-element-id,omitempty"`
 
 		NetworkElementLastSuccessfulDiscovery string `json:"network-element-lastSuccessfulDiscovery,omitempty"`
@@ -59,28 +68,28 @@ func (m *TapiNetworkElementNetworkElement) UnmarshalJSON(raw []byte) error {
 
 		NetworkElementVersion string `json:"network-element-version,omitempty"`
 	}
-	if err := swag.ReadJSON(raw, &dataAO1); err != nil {
+	if err := swag.ReadJSON(raw, &dataAO2); err != nil {
 		return err
 	}
 
-	m.NetworkElementID = dataAO1.NetworkElementID
+	m.NetworkElementID = dataAO2.NetworkElementID
 
-	m.NetworkElementLastSuccessfulDiscovery = dataAO1.NetworkElementLastSuccessfulDiscovery
+	m.NetworkElementLastSuccessfulDiscovery = dataAO2.NetworkElementLastSuccessfulDiscovery
 
-	m.NetworkElementModel = dataAO1.NetworkElementModel
+	m.NetworkElementModel = dataAO2.NetworkElementModel
 
-	m.NetworkElementName = dataAO1.NetworkElementName
+	m.NetworkElementName = dataAO2.NetworkElementName
 
-	m.NetworkElementVendor = dataAO1.NetworkElementVendor
+	m.NetworkElementVendor = dataAO2.NetworkElementVendor
 
-	m.NetworkElementVersion = dataAO1.NetworkElementVersion
+	m.NetworkElementVersion = dataAO2.NetworkElementVersion
 
 	return nil
 }
 
 // MarshalJSON marshals this object to a JSON structure
 func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
-	_parts := make([][]byte, 0, 2)
+	_parts := make([][]byte, 0, 3)
 
 	aO0, err := swag.WriteJSON(m.TapiNetworkElementConnection)
 	if err != nil {
@@ -88,7 +97,13 @@ func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
 	}
 	_parts = append(_parts, aO0)
 
-	var dataAO1 struct {
+	aO1, err := swag.WriteJSON(m.TapiNetworkElementSite)
+	if err != nil {
+		return nil, err
+	}
+	_parts = append(_parts, aO1)
+
+	var dataAO2 struct {
 		NetworkElementID string `json:"network-element-id,omitempty"`
 
 		NetworkElementLastSuccessfulDiscovery string `json:"network-element-lastSuccessfulDiscovery,omitempty"`
@@ -102,23 +117,23 @@ func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
 		NetworkElementVersion string `json:"network-element-version,omitempty"`
 	}
 
-	dataAO1.NetworkElementID = m.NetworkElementID
+	dataAO2.NetworkElementID = m.NetworkElementID
 
-	dataAO1.NetworkElementLastSuccessfulDiscovery = m.NetworkElementLastSuccessfulDiscovery
+	dataAO2.NetworkElementLastSuccessfulDiscovery = m.NetworkElementLastSuccessfulDiscovery
 
-	dataAO1.NetworkElementModel = m.NetworkElementModel
+	dataAO2.NetworkElementModel = m.NetworkElementModel
 
-	dataAO1.NetworkElementName = m.NetworkElementName
+	dataAO2.NetworkElementName = m.NetworkElementName
 
-	dataAO1.NetworkElementVendor = m.NetworkElementVendor
+	dataAO2.NetworkElementVendor = m.NetworkElementVendor
 
-	dataAO1.NetworkElementVersion = m.NetworkElementVersion
+	dataAO2.NetworkElementVersion = m.NetworkElementVersion
 
-	jsonDataAO1, errAO1 := swag.WriteJSON(dataAO1)
-	if errAO1 != nil {
-		return nil, errAO1
+	jsonDataAO2, errAO2 := swag.WriteJSON(dataAO2)
+	if errAO2 != nil {
+		return nil, errAO2
 	}
-	_parts = append(_parts, jsonDataAO1)
+	_parts = append(_parts, jsonDataAO2)
 
 	return swag.ConcatJSON(_parts...), nil
 }
@@ -129,6 +144,10 @@ func (m *TapiNetworkElementNetworkElement) Validate(formats strfmt.Registry) err
 
 	// validation for a type composition with TapiNetworkElementConnection
 	if err := m.TapiNetworkElementConnection.Validate(formats); err != nil {
+		res = append(res, err)
+	}
+	// validation for a type composition with TapiNetworkElementSite
+	if err := m.TapiNetworkElementSite.Validate(formats); err != nil {
 		res = append(res, err)
 	}
 
