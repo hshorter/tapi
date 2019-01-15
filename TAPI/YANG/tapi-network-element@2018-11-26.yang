@@ -61,7 +61,7 @@ module tapi-network-element {
         description "none";
     }
     grouping site {
-        leaf site-name {
+        leaf siteName {
             type string;
             description "none";
         }

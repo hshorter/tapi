@@ -3996,7 +3996,7 @@ func init() {
           "description": "none",
           "type": "string"
         },
-        "site-name": {
+        "siteName": {
           "description": "none",
           "type": "string"
         }
@@ -11933,7 +11933,7 @@ func init() {
           "description": "none",
           "type": "string"
         },
-        "site-name": {
+        "siteName": {
           "description": "none",
           "type": "string"
         }

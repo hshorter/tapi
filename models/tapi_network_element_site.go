@@ -22,7 +22,7 @@ type TapiNetworkElementSite struct {
 	Longitude string `json:"longitude,omitempty"`
 
 	// none
-	SiteName string `json:"site-name,omitempty"`
+	SiteName string `json:"siteName,omitempty"`
 }
 
 // Validate validates this tapi network element site

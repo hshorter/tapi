@@ -2971,7 +2971,7 @@ definitions:
   tapi.network.element.Site:
     type: "object"
     properties:
-      site-name:
+      siteName:
         type: "string"
         description: "none"
       latitude:
