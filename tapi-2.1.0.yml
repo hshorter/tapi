@@ -2949,6 +2949,10 @@ definitions:
     - $ref: "#/definitions/tapi.network.element.Site"
     - type: "object"
       properties:
+        network-element-role:
+          type: "string"
+          description: "A label that can be used to define the role of the Network\
+            \ Element."
         network-element-model:
           type: "string"
           description: "The Network Element model."

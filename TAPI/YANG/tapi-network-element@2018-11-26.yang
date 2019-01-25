@@ -100,6 +100,10 @@ module tapi-network-element {
             type string;
             description "The last time the Network Element was successfully discovered.";
         }
+        leaf network-element-role {
+            type string;
+            description "A label that can be used to define the role of the Network Element.";
+        }
         uses connection;
         uses site;
         description "none";

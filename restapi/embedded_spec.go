@@ -3973,6 +3973,10 @@ func init() {
               "description": "The Network Element name.",
               "type": "string"
             },
+            "network-element-role": {
+              "description": "A label that can be used to define the role of the Network Element.",
+              "type": "string"
+            },
             "network-element-vendor": {
               "description": "The Network Element vendor.",
               "type": "string"
@@ -11908,6 +11912,10 @@ func init() {
             },
             "network-element-name": {
               "description": "The Network Element name.",
+              "type": "string"
+            },
+            "network-element-role": {
+              "description": "A label that can be used to define the role of the Network Element.",
               "type": "string"
             },
             "network-element-vendor": {

@@ -31,6 +31,9 @@ type TapiNetworkElementNetworkElement struct {
 	// The Network Element name.
 	NetworkElementName string `json:"network-element-name,omitempty"`
 
+	// A label that can be used to define the role of the Network Element.
+	NetworkElementRole string `json:"network-element-role,omitempty"`
+
 	// The Network Element vendor.
 	NetworkElementVendor string `json:"network-element-vendor,omitempty"`
 
@@ -64,6 +67,8 @@ func (m *TapiNetworkElementNetworkElement) UnmarshalJSON(raw []byte) error {
 
 		NetworkElementName string `json:"network-element-name,omitempty"`
 
+		NetworkElementRole string `json:"network-element-role,omitempty"`
+
 		NetworkElementVendor string `json:"network-element-vendor,omitempty"`
 
 		NetworkElementVersion string `json:"network-element-version,omitempty"`
@@ -79,6 +84,8 @@ func (m *TapiNetworkElementNetworkElement) UnmarshalJSON(raw []byte) error {
 	m.NetworkElementModel = dataAO2.NetworkElementModel
 
 	m.NetworkElementName = dataAO2.NetworkElementName
+
+	m.NetworkElementRole = dataAO2.NetworkElementRole
 
 	m.NetworkElementVendor = dataAO2.NetworkElementVendor
 
@@ -112,6 +119,8 @@ func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
 
 		NetworkElementName string `json:"network-element-name,omitempty"`
 
+		NetworkElementRole string `json:"network-element-role,omitempty"`
+
 		NetworkElementVendor string `json:"network-element-vendor,omitempty"`
 
 		NetworkElementVersion string `json:"network-element-version,omitempty"`
@@ -124,6 +133,8 @@ func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
 	dataAO2.NetworkElementModel = m.NetworkElementModel
 
 	dataAO2.NetworkElementName = m.NetworkElementName
+
+	dataAO2.NetworkElementRole = m.NetworkElementRole
 
 	dataAO2.NetworkElementVendor = m.NetworkElementVendor
 
