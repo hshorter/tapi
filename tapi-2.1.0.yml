@@ -2474,13 +2474,22 @@ definitions:
   tapi.eth.OamJobAugmentation1:
     type: "object"
     properties:
-      eth-pro-active-2way-measurement-job:
+      eth-on-demand-2way-measurement-job:
         description: "none"
-        $ref: "#/definitions/tapi.eth.EthProActive2wayMeasurementJob"
+        $ref: "#/definitions/tapi.eth.EthOnDemand2wayMeasurementJob"
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
   tapi.eth.OamJobAugmentation2:
+    type: "object"
+    properties:
+      eth-loopback-job:
+        description: "none"
+        $ref: "#/definitions/tapi.eth.EthLoopbackJob"
+    x-augmentation:
+      prefix: "tapi-eth"
+      namespace: "urn:onf:otcc:yang:tapi-eth"
+  tapi.eth.OamJobAugmentation3:
     type: "object"
     properties:
       eth-on-demand-1way-measurement-job:
@@ -2489,21 +2498,12 @@ definitions:
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.OamJobAugmentation3:
-    type: "object"
-    properties:
-      eth-link-trace-job:
-        description: "none"
-        $ref: "#/definitions/tapi.eth.EthLinkTraceJob"
-    x-augmentation:
-      prefix: "tapi-eth"
-      namespace: "urn:onf:otcc:yang:tapi-eth"
   tapi.eth.OamJobAugmentation4:
     type: "object"
     properties:
-      eth-on-demand-2way-measurement-job:
+      eth-pro-active-2way-measurement-job:
         description: "none"
-        $ref: "#/definitions/tapi.eth.EthOnDemand2wayMeasurementJob"
+        $ref: "#/definitions/tapi.eth.EthProActive2wayMeasurementJob"
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
@@ -2519,18 +2519,18 @@ definitions:
   tapi.eth.OamJobAugmentation6:
     type: "object"
     properties:
-      eth-loopback-job:
+      eth-pro-active-1way-measurement-job:
         description: "none"
-        $ref: "#/definitions/tapi.eth.EthLoopbackJob"
+        $ref: "#/definitions/tapi.eth.EthProActive1wayMeasurementJob"
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
   tapi.eth.OamJobAugmentation7:
     type: "object"
     properties:
-      eth-pro-active-1way-measurement-job:
+      eth-link-trace-job:
         description: "none"
-        $ref: "#/definitions/tapi.eth.EthProActive1wayMeasurementJob"
+        $ref: "#/definitions/tapi.eth.EthLinkTraceJob"
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
@@ -2595,49 +2595,13 @@ definitions:
   tapi.eth.PmCurrentDataAugmentation1:
     type: "object"
     properties:
-      eth-on-demand-dm-performance-data:
+      eth-on-demand-lm-performance-data:
         description: "none"
-        $ref: "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
+        $ref: "#/definitions/tapi.eth.EthOnDemandLmPerformanceData"
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
   tapi.eth.PmCurrentDataAugmentation10:
-    type: "object"
-    properties:
-      eth-on-demand-1-lm-performance-data:
-        description: "none"
-        $ref: "#/definitions/tapi.eth.EthOnDemand1LmPerformanceData"
-    x-augmentation:
-      prefix: "tapi-eth"
-      namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmCurrentDataAugmentation11:
-    type: "object"
-    properties:
-      eth-loopback-result-data:
-        description: "none"
-        $ref: "#/definitions/tapi.eth.EthLoopbackResultData"
-    x-augmentation:
-      prefix: "tapi-eth"
-      namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmCurrentDataAugmentation2:
-    type: "object"
-    properties:
-      eth-on-demand-1-dm-performance-data:
-        description: "none"
-        $ref: "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
-    x-augmentation:
-      prefix: "tapi-eth"
-      namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmCurrentDataAugmentation3:
-    type: "object"
-    properties:
-      eth-pro-active-lm-performance-data:
-        description: "none"
-        $ref: "#/definitions/tapi.eth.EthProActiveLmPerformanceData"
-    x-augmentation:
-      prefix: "tapi-eth"
-      namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmCurrentDataAugmentation4:
     type: "object"
     properties:
       eth-test-result-data:
@@ -2646,7 +2610,7 @@ definitions:
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmCurrentDataAugmentation5:
+  tapi.eth.PmCurrentDataAugmentation11:
     type: "object"
     properties:
       eth-link-trace-result-data:
@@ -2655,16 +2619,25 @@ definitions:
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmCurrentDataAugmentation6:
+  tapi.eth.PmCurrentDataAugmentation2:
     type: "object"
     properties:
-      eth-on-demand-lm-performance-data:
+      eth-pro-active-lm-performance-data:
         description: "none"
-        $ref: "#/definitions/tapi.eth.EthOnDemandLmPerformanceData"
+        $ref: "#/definitions/tapi.eth.EthProActiveLmPerformanceData"
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmCurrentDataAugmentation7:
+  tapi.eth.PmCurrentDataAugmentation3:
+    type: "object"
+    properties:
+      eth-loopback-result-data:
+        description: "none"
+        $ref: "#/definitions/tapi.eth.EthLoopbackResultData"
+    x-augmentation:
+      prefix: "tapi-eth"
+      namespace: "urn:onf:otcc:yang:tapi-eth"
+  tapi.eth.PmCurrentDataAugmentation4:
     type: "object"
     properties:
       eth-pro-active-1-dm-performance-data:
@@ -2673,7 +2646,7 @@ definitions:
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmCurrentDataAugmentation8:
+  tapi.eth.PmCurrentDataAugmentation5:
     type: "object"
     properties:
       eth-pro-active-1-lm-performance-data:
@@ -2682,12 +2655,39 @@ definitions:
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmCurrentDataAugmentation9:
+  tapi.eth.PmCurrentDataAugmentation6:
+    type: "object"
+    properties:
+      eth-on-demand-1-lm-performance-data:
+        description: "none"
+        $ref: "#/definitions/tapi.eth.EthOnDemand1LmPerformanceData"
+    x-augmentation:
+      prefix: "tapi-eth"
+      namespace: "urn:onf:otcc:yang:tapi-eth"
+  tapi.eth.PmCurrentDataAugmentation7:
+    type: "object"
+    properties:
+      eth-on-demand-1-dm-performance-data:
+        description: "none"
+        $ref: "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
+    x-augmentation:
+      prefix: "tapi-eth"
+      namespace: "urn:onf:otcc:yang:tapi-eth"
+  tapi.eth.PmCurrentDataAugmentation8:
     type: "object"
     properties:
       eth-pro-active-dm-performance-data:
         description: "none"
         $ref: "#/definitions/tapi.eth.EthProActiveDmPerformanceData"
+    x-augmentation:
+      prefix: "tapi-eth"
+      namespace: "urn:onf:otcc:yang:tapi-eth"
+  tapi.eth.PmCurrentDataAugmentation9:
+    type: "object"
+    properties:
+      eth-on-demand-dm-performance-data:
+        description: "none"
+        $ref: "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
@@ -2703,49 +2703,22 @@ definitions:
   tapi.eth.PmHistoryDataAugmentation2:
     type: "object"
     properties:
-      eth-on-demand-1-dm-performance-data:
-        description: "none"
-        $ref: "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
-    x-augmentation:
-      prefix: "tapi-eth"
-      namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmHistoryDataAugmentation3:
-    type: "object"
-    properties:
       eth-pro-active-1-dm-performance-data:
         description: "none"
         $ref: "#/definitions/tapi.eth.EthProActive1DmPerformanceData"
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
+  tapi.eth.PmHistoryDataAugmentation3:
+    type: "object"
+    properties:
+      eth-on-demand-1-dm-performance-data:
+        description: "none"
+        $ref: "#/definitions/tapi.eth.EthOnDemand1DmPerformanceData"
+    x-augmentation:
+      prefix: "tapi-eth"
+      namespace: "urn:onf:otcc:yang:tapi-eth"
   tapi.eth.PmHistoryDataAugmentation4:
-    type: "object"
-    properties:
-      eth-on-demand-1-lm-performance-data:
-        description: "none"
-        $ref: "#/definitions/tapi.eth.EthOnDemand1LmPerformanceData"
-    x-augmentation:
-      prefix: "tapi-eth"
-      namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmHistoryDataAugmentation5:
-    type: "object"
-    properties:
-      eth-on-demand-dm-performance-data:
-        description: "none"
-        $ref: "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
-    x-augmentation:
-      prefix: "tapi-eth"
-      namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmHistoryDataAugmentation6:
-    type: "object"
-    properties:
-      eth-pro-active-dm-performance-data:
-        description: "none"
-        $ref: "#/definitions/tapi.eth.EthProActiveDmPerformanceData"
-    x-augmentation:
-      prefix: "tapi-eth"
-      namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmHistoryDataAugmentation7:
     type: "object"
     properties:
       eth-pro-active-1-lm-performance-data:
@@ -2754,7 +2727,16 @@ definitions:
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmHistoryDataAugmentation8:
+  tapi.eth.PmHistoryDataAugmentation5:
+    type: "object"
+    properties:
+      eth-on-demand-1-lm-performance-data:
+        description: "none"
+        $ref: "#/definitions/tapi.eth.EthOnDemand1LmPerformanceData"
+    x-augmentation:
+      prefix: "tapi-eth"
+      namespace: "urn:onf:otcc:yang:tapi-eth"
+  tapi.eth.PmHistoryDataAugmentation6:
     type: "object"
     properties:
       eth-on-demand-lm-performance-data:
@@ -2763,25 +2745,25 @@ definitions:
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
+  tapi.eth.PmHistoryDataAugmentation7:
+    type: "object"
+    properties:
+      eth-pro-active-dm-performance-data:
+        description: "none"
+        $ref: "#/definitions/tapi.eth.EthProActiveDmPerformanceData"
+    x-augmentation:
+      prefix: "tapi-eth"
+      namespace: "urn:onf:otcc:yang:tapi-eth"
+  tapi.eth.PmHistoryDataAugmentation8:
+    type: "object"
+    properties:
+      eth-on-demand-dm-performance-data:
+        description: "none"
+        $ref: "#/definitions/tapi.eth.EthOnDemandDmPerformanceData"
+    x-augmentation:
+      prefix: "tapi-eth"
+      namespace: "urn:onf:otcc:yang:tapi-eth"
   tapi.eth.PmThresholdDataAugmentation1:
-    type: "object"
-    properties:
-      eth-1-lm-threshold-data:
-        description: "none"
-        $ref: "#/definitions/tapi.eth.Eth1LmThresholdData"
-    x-augmentation:
-      prefix: "tapi-eth"
-      namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmThresholdDataAugmentation2:
-    type: "object"
-    properties:
-      eth-dm-threshold-data:
-        description: "none"
-        $ref: "#/definitions/tapi.eth.EthDmThresholdData"
-    x-augmentation:
-      prefix: "tapi-eth"
-      namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmThresholdDataAugmentation3:
     type: "object"
     properties:
       eth-lm-threshold-data:
@@ -2790,12 +2772,30 @@ definitions:
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
-  tapi.eth.PmThresholdDataAugmentation4:
+  tapi.eth.PmThresholdDataAugmentation2:
+    type: "object"
+    properties:
+      eth-1-lm-threshold-data:
+        description: "none"
+        $ref: "#/definitions/tapi.eth.Eth1LmThresholdData"
+    x-augmentation:
+      prefix: "tapi-eth"
+      namespace: "urn:onf:otcc:yang:tapi-eth"
+  tapi.eth.PmThresholdDataAugmentation3:
     type: "object"
     properties:
       eth-1-dm-threshold-data:
         description: "none"
         $ref: "#/definitions/tapi.eth.Eth1DmThresholdData"
+    x-augmentation:
+      prefix: "tapi-eth"
+      namespace: "urn:onf:otcc:yang:tapi-eth"
+  tapi.eth.PmThresholdDataAugmentation4:
+    type: "object"
+    properties:
+      eth-dm-threshold-data:
+        description: "none"
+        $ref: "#/definitions/tapi.eth.EthDmThresholdData"
     x-augmentation:
       prefix: "tapi-eth"
       namespace: "urn:onf:otcc:yang:tapi-eth"
@@ -2872,6 +2872,12 @@ definitions:
         description: "This attribute contains the minimum frame loss ratio calculated\
           \ over a period of time.\r\n                    The accuracy of the value\
           \ is for further study."
+  tapi.network.element.Attributes:
+    type: "object"
+    properties:
+      role:
+        type: "string"
+        description: "A label that can be used to define the role of the Network Element."
   tapi.network.element.Connection:
     type: "object"
     properties:
@@ -2945,14 +2951,11 @@ definitions:
               $ref: "#/definitions/tapi.network.element.NetworkElement"
   tapi.network.element.NetworkElement:
     allOf:
+    - $ref: "#/definitions/tapi.network.element.Attributes"
     - $ref: "#/definitions/tapi.network.element.Connection"
     - $ref: "#/definitions/tapi.network.element.Site"
     - type: "object"
       properties:
-        network-element-role:
-          type: "string"
-          description: "A label that can be used to define the role of the Network\
-            \ Element."
         network-element-model:
           type: "string"
           description: "The Network Element model."
@@ -2986,6 +2989,7 @@ definitions:
         description: "none"
   tapi.network.element.createnetworkelement.input.NetconfConnection:
     allOf:
+    - $ref: "#/definitions/tapi.network.element.Attributes"
     - $ref: "#/definitions/tapi.network.element.Connection"
     - $ref: "#/definitions/tapi.network.element.Site"
   tapi.notification.AlarmInfo:

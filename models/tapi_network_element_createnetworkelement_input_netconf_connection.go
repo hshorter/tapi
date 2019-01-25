@@ -15,6 +15,8 @@ import (
 // TapiNetworkElementCreatenetworkelementInputNetconfConnection tapi network element createnetworkelement input netconf connection
 // swagger:model tapi.network.element.createnetworkelement.input.NetconfConnection
 type TapiNetworkElementCreatenetworkelementInputNetconfConnection struct {
+	TapiNetworkElementAttributes
+
 	TapiNetworkElementConnection
 
 	TapiNetworkElementSite
@@ -23,37 +25,50 @@ type TapiNetworkElementCreatenetworkelementInputNetconfConnection struct {
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *TapiNetworkElementCreatenetworkelementInputNetconfConnection) UnmarshalJSON(raw []byte) error {
 	// AO0
-	var aO0 TapiNetworkElementConnection
+	var aO0 TapiNetworkElementAttributes
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
 		return err
 	}
-	m.TapiNetworkElementConnection = aO0
+	m.TapiNetworkElementAttributes = aO0
 
 	// AO1
-	var aO1 TapiNetworkElementSite
+	var aO1 TapiNetworkElementConnection
 	if err := swag.ReadJSON(raw, &aO1); err != nil {
 		return err
 	}
-	m.TapiNetworkElementSite = aO1
+	m.TapiNetworkElementConnection = aO1
+
+	// AO2
+	var aO2 TapiNetworkElementSite
+	if err := swag.ReadJSON(raw, &aO2); err != nil {
+		return err
+	}
+	m.TapiNetworkElementSite = aO2
 
 	return nil
 }
 
 // MarshalJSON marshals this object to a JSON structure
 func (m TapiNetworkElementCreatenetworkelementInputNetconfConnection) MarshalJSON() ([]byte, error) {
-	_parts := make([][]byte, 0, 2)
+	_parts := make([][]byte, 0, 3)
 
-	aO0, err := swag.WriteJSON(m.TapiNetworkElementConnection)
+	aO0, err := swag.WriteJSON(m.TapiNetworkElementAttributes)
 	if err != nil {
 		return nil, err
 	}
 	_parts = append(_parts, aO0)
 
-	aO1, err := swag.WriteJSON(m.TapiNetworkElementSite)
+	aO1, err := swag.WriteJSON(m.TapiNetworkElementConnection)
 	if err != nil {
 		return nil, err
 	}
 	_parts = append(_parts, aO1)
+
+	aO2, err := swag.WriteJSON(m.TapiNetworkElementSite)
+	if err != nil {
+		return nil, err
+	}
+	_parts = append(_parts, aO2)
 
 	return swag.ConcatJSON(_parts...), nil
 }
@@ -62,6 +77,10 @@ func (m TapiNetworkElementCreatenetworkelementInputNetconfConnection) MarshalJSO
 func (m *TapiNetworkElementCreatenetworkelementInputNetconfConnection) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	// validation for a type composition with TapiNetworkElementAttributes
+	if err := m.TapiNetworkElementAttributes.Validate(formats); err != nil {
+		res = append(res, err)
+	}
 	// validation for a type composition with TapiNetworkElementConnection
 	if err := m.TapiNetworkElementConnection.Validate(formats); err != nil {
 		res = append(res, err)

@@ -15,6 +15,8 @@ import (
 // TapiNetworkElementNetworkElement tapi network element network element
 // swagger:model tapi.network.element.NetworkElement
 type TapiNetworkElementNetworkElement struct {
+	TapiNetworkElementAttributes
+
 	TapiNetworkElementConnection
 
 	TapiNetworkElementSite
@@ -31,9 +33,6 @@ type TapiNetworkElementNetworkElement struct {
 	// The Network Element name.
 	NetworkElementName string `json:"network-element-name,omitempty"`
 
-	// A label that can be used to define the role of the Network Element.
-	NetworkElementRole string `json:"network-element-role,omitempty"`
-
 	// The Network Element vendor.
 	NetworkElementVendor string `json:"network-element-vendor,omitempty"`
 
@@ -44,21 +43,28 @@ type TapiNetworkElementNetworkElement struct {
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *TapiNetworkElementNetworkElement) UnmarshalJSON(raw []byte) error {
 	// AO0
-	var aO0 TapiNetworkElementConnection
+	var aO0 TapiNetworkElementAttributes
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
 		return err
 	}
-	m.TapiNetworkElementConnection = aO0
+	m.TapiNetworkElementAttributes = aO0
 
 	// AO1
-	var aO1 TapiNetworkElementSite
+	var aO1 TapiNetworkElementConnection
 	if err := swag.ReadJSON(raw, &aO1); err != nil {
 		return err
 	}
-	m.TapiNetworkElementSite = aO1
+	m.TapiNetworkElementConnection = aO1
 
 	// AO2
-	var dataAO2 struct {
+	var aO2 TapiNetworkElementSite
+	if err := swag.ReadJSON(raw, &aO2); err != nil {
+		return err
+	}
+	m.TapiNetworkElementSite = aO2
+
+	// AO3
+	var dataAO3 struct {
 		NetworkElementID string `json:"network-element-id,omitempty"`
 
 		NetworkElementLastSuccessfulDiscovery string `json:"network-element-lastSuccessfulDiscovery,omitempty"`
@@ -67,50 +73,52 @@ func (m *TapiNetworkElementNetworkElement) UnmarshalJSON(raw []byte) error {
 
 		NetworkElementName string `json:"network-element-name,omitempty"`
 
-		NetworkElementRole string `json:"network-element-role,omitempty"`
-
 		NetworkElementVendor string `json:"network-element-vendor,omitempty"`
 
 		NetworkElementVersion string `json:"network-element-version,omitempty"`
 	}
-	if err := swag.ReadJSON(raw, &dataAO2); err != nil {
+	if err := swag.ReadJSON(raw, &dataAO3); err != nil {
 		return err
 	}
 
-	m.NetworkElementID = dataAO2.NetworkElementID
+	m.NetworkElementID = dataAO3.NetworkElementID
 
-	m.NetworkElementLastSuccessfulDiscovery = dataAO2.NetworkElementLastSuccessfulDiscovery
+	m.NetworkElementLastSuccessfulDiscovery = dataAO3.NetworkElementLastSuccessfulDiscovery
 
-	m.NetworkElementModel = dataAO2.NetworkElementModel
+	m.NetworkElementModel = dataAO3.NetworkElementModel
 
-	m.NetworkElementName = dataAO2.NetworkElementName
+	m.NetworkElementName = dataAO3.NetworkElementName
 
-	m.NetworkElementRole = dataAO2.NetworkElementRole
+	m.NetworkElementVendor = dataAO3.NetworkElementVendor
 
-	m.NetworkElementVendor = dataAO2.NetworkElementVendor
-
-	m.NetworkElementVersion = dataAO2.NetworkElementVersion
+	m.NetworkElementVersion = dataAO3.NetworkElementVersion
 
 	return nil
 }
 
 // MarshalJSON marshals this object to a JSON structure
 func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
-	_parts := make([][]byte, 0, 3)
+	_parts := make([][]byte, 0, 4)
 
-	aO0, err := swag.WriteJSON(m.TapiNetworkElementConnection)
+	aO0, err := swag.WriteJSON(m.TapiNetworkElementAttributes)
 	if err != nil {
 		return nil, err
 	}
 	_parts = append(_parts, aO0)
 
-	aO1, err := swag.WriteJSON(m.TapiNetworkElementSite)
+	aO1, err := swag.WriteJSON(m.TapiNetworkElementConnection)
 	if err != nil {
 		return nil, err
 	}
 	_parts = append(_parts, aO1)
 
-	var dataAO2 struct {
+	aO2, err := swag.WriteJSON(m.TapiNetworkElementSite)
+	if err != nil {
+		return nil, err
+	}
+	_parts = append(_parts, aO2)
+
+	var dataAO3 struct {
 		NetworkElementID string `json:"network-element-id,omitempty"`
 
 		NetworkElementLastSuccessfulDiscovery string `json:"network-element-lastSuccessfulDiscovery,omitempty"`
@@ -119,32 +127,28 @@ func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
 
 		NetworkElementName string `json:"network-element-name,omitempty"`
 
-		NetworkElementRole string `json:"network-element-role,omitempty"`
-
 		NetworkElementVendor string `json:"network-element-vendor,omitempty"`
 
 		NetworkElementVersion string `json:"network-element-version,omitempty"`
 	}
 
-	dataAO2.NetworkElementID = m.NetworkElementID
+	dataAO3.NetworkElementID = m.NetworkElementID
 
-	dataAO2.NetworkElementLastSuccessfulDiscovery = m.NetworkElementLastSuccessfulDiscovery
+	dataAO3.NetworkElementLastSuccessfulDiscovery = m.NetworkElementLastSuccessfulDiscovery
 
-	dataAO2.NetworkElementModel = m.NetworkElementModel
+	dataAO3.NetworkElementModel = m.NetworkElementModel
 
-	dataAO2.NetworkElementName = m.NetworkElementName
+	dataAO3.NetworkElementName = m.NetworkElementName
 
-	dataAO2.NetworkElementRole = m.NetworkElementRole
+	dataAO3.NetworkElementVendor = m.NetworkElementVendor
 
-	dataAO2.NetworkElementVendor = m.NetworkElementVendor
+	dataAO3.NetworkElementVersion = m.NetworkElementVersion
 
-	dataAO2.NetworkElementVersion = m.NetworkElementVersion
-
-	jsonDataAO2, errAO2 := swag.WriteJSON(dataAO2)
-	if errAO2 != nil {
-		return nil, errAO2
+	jsonDataAO3, errAO3 := swag.WriteJSON(dataAO3)
+	if errAO3 != nil {
+		return nil, errAO3
 	}
-	_parts = append(_parts, jsonDataAO2)
+	_parts = append(_parts, jsonDataAO3)
 
 	return swag.ConcatJSON(_parts...), nil
 }
@@ -153,6 +157,10 @@ func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
 func (m *TapiNetworkElementNetworkElement) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	// validation for a type composition with TapiNetworkElementAttributes
+	if err := m.TapiNetworkElementAttributes.Validate(formats); err != nil {
+		res = append(res, err)
+	}
 	// validation for a type composition with TapiNetworkElementConnection
 	if err := m.TapiNetworkElementConnection.Validate(formats); err != nil {
 		res = append(res, err)

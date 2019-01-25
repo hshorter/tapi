@@ -75,6 +75,12 @@ module tapi-network-element {
         }
         description "none";
     }
+    grouping attributes {
+        leaf role {
+            type string;
+            description "A label that can be used to define the role of the Network Element.";
+        }
+    }
     grouping network-element {
         leaf network-element-id {
             type string;
@@ -100,12 +106,9 @@ module tapi-network-element {
             type string;
             description "The last time the Network Element was successfully discovered.";
         }
-        leaf network-element-role {
-            type string;
-            description "A label that can be used to define the role of the Network Element.";
-        }
         uses connection;
         uses site;
+        uses attributes;
         description "none";
     }
     /***********************
@@ -141,6 +144,7 @@ module tapi-network-element {
             container netconf-connection {
                 uses connection;
                 uses site;
+                uses attributes;
                 description "none";
             }
          }
