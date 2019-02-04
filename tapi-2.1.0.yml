@@ -2956,6 +2956,9 @@ definitions:
     - $ref: "#/definitions/tapi.network.element.Site"
     - type: "object"
       properties:
+        network-element-type:
+          type: "string"
+          description: "The Network Element type."
         network-element-model:
           type: "string"
           description: "The Network Element model."

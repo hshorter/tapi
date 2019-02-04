@@ -3985,6 +3985,10 @@ func init() {
               "description": "The Network Element name.",
               "type": "string"
             },
+            "network-element-type": {
+              "description": "The Network Element type.",
+              "type": "string"
+            },
             "network-element-vendor": {
               "description": "The Network Element vendor.",
               "type": "string"
@@ -11935,6 +11939,10 @@ func init() {
             },
             "network-element-name": {
               "description": "The Network Element name.",
+              "type": "string"
+            },
+            "network-element-type": {
+              "description": "The Network Element type.",
               "type": "string"
             },
             "network-element-vendor": {

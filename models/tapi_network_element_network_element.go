@@ -33,6 +33,9 @@ type TapiNetworkElementNetworkElement struct {
 	// The Network Element name.
 	NetworkElementName string `json:"network-element-name,omitempty"`
 
+	// The Network Element type.
+	NetworkElementType string `json:"network-element-type,omitempty"`
+
 	// The Network Element vendor.
 	NetworkElementVendor string `json:"network-element-vendor,omitempty"`
 
@@ -73,6 +76,8 @@ func (m *TapiNetworkElementNetworkElement) UnmarshalJSON(raw []byte) error {
 
 		NetworkElementName string `json:"network-element-name,omitempty"`
 
+		NetworkElementType string `json:"network-element-type,omitempty"`
+
 		NetworkElementVendor string `json:"network-element-vendor,omitempty"`
 
 		NetworkElementVersion string `json:"network-element-version,omitempty"`
@@ -88,6 +93,8 @@ func (m *TapiNetworkElementNetworkElement) UnmarshalJSON(raw []byte) error {
 	m.NetworkElementModel = dataAO3.NetworkElementModel
 
 	m.NetworkElementName = dataAO3.NetworkElementName
+
+	m.NetworkElementType = dataAO3.NetworkElementType
 
 	m.NetworkElementVendor = dataAO3.NetworkElementVendor
 
@@ -127,6 +134,8 @@ func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
 
 		NetworkElementName string `json:"network-element-name,omitempty"`
 
+		NetworkElementType string `json:"network-element-type,omitempty"`
+
 		NetworkElementVendor string `json:"network-element-vendor,omitempty"`
 
 		NetworkElementVersion string `json:"network-element-version,omitempty"`
@@ -139,6 +148,8 @@ func (m TapiNetworkElementNetworkElement) MarshalJSON() ([]byte, error) {
 	dataAO3.NetworkElementModel = m.NetworkElementModel
 
 	dataAO3.NetworkElementName = m.NetworkElementName
+
+	dataAO3.NetworkElementType = m.NetworkElementType
 
 	dataAO3.NetworkElementVendor = m.NetworkElementVendor
 

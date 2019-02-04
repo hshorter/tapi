@@ -106,6 +106,10 @@ module tapi-network-element {
             type string;
             description "The last time the Network Element was successfully discovered.";
         }
+        leaf network-element-type {
+            type string;
+            description "The Network Element type.";
+        }
         uses connection;
         uses site;
         uses attributes;
